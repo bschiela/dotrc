@@ -129,3 +129,6 @@ export VIMRUNTIME="/usr/share/vim/vim74/"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+# added to use multirust on eniac
+export PATH=$PATH:/home1/c/cis198/local/bin
