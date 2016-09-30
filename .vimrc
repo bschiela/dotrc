@@ -26,8 +26,11 @@ let g:SuperTabClosePreviewOnPopupClose=1 " close vim's pum when completion pum c
 let g:SuperTabDefaultCompletionType = "context" " guess suggestions based on context
 let g:SuperTabContextDefaultCompletionType = "<C-x><C-o>" " default when context fails
 "Plugin 'tpope/vim-fugitive'       " git integration
+
+" syntax files
 Plugin 'vim-ruby/vim-ruby'        " ruby syntax, code formatting, autocomplete
-Plugin 'rust-lang/rust.vim'
+Plugin 'rust-lang/rust.vim'				" rust syntax
+Plugin 'keith/swift.vim'					" swift syntax
 
 call vundle#end()            " required
 filetype plugin indent on    " required (allow filetype-specific plugins and indentation)
@@ -41,10 +44,9 @@ filetype plugin indent on    " required (allow filetype-specific plugins and ind
 " Put your non-Plugin stuff after this line
 syntax on " enable syntax highlighting
 filetype on " enable filetype detection
-set nowrap " don't wrap text by default
+set nowrap " don't wrap text
 set splitright " open vertical splits to the right
 set splitbelow " open horizontal splits below
-set shiftwidth=2 tabstop=2 noexpandtab " default tab properties
 
 " autocompletion/popup menu options
 highlight Pmenu ctermbg=DarkRed ctermfg=White cterm=bold
@@ -55,4 +57,10 @@ inoremap <expr> <CR> (pumvisible() ? "<C-y>" : "<C-g>u<CR>") " prevent newline w
 " for ruby files
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 expandtab number " ruby indentation style
 autocmd FileType ruby let g:rubycomplete_buffer_loading=1 " load current buffer for suggestions
-autocmd FileType html setlocal shiftwidth=2 tabstop=2 number " html files
+
+" for html files
+autocmd FileType html setlocal shiftwidth=2 tabstop=2 number
+
+" for swift files
+autocmd FileType swift setlocal shiftwidth=4 tabstop=4 noexpandtab number " swift indentation style
+autocmd FileType swift let g:syntastic_swift_checkers = ['swiftpm', 'swiftlint']
