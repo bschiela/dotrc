@@ -14,6 +14,14 @@ Plugin 'VundleVim/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 Plugin 'scrooloose/nerdtree'      " file tree explorer
 Plugin 'scrooloose/syntastic'     " syntax error checking/highlighting
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 "Plugin 'scrooloose/nerdcommenter' " code commenting keybindings
 Plugin 'kien/ctrlp.vim'           " fuzzy file finder
 let g:ctrlp_open_new_file='r'     " replace current buffer by default
@@ -35,18 +43,21 @@ Plugin 'keith/swift.vim'					" swift syntax
 call vundle#end()            " required
 filetype plugin indent on    " required (allow filetype-specific plugins and indentation)
 
-" Brief help
+" Vundle help
 " :PluginList       - lists configured plugins
 " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
 " :PluginSearch foo - searches for foo; append `!` to refresh local cache
 " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 
 " Put your non-Plugin stuff after this line
-syntax on " enable syntax highlighting
-filetype on " enable filetype detection
-set nowrap " don't wrap text
-set splitright " open vertical splits to the right
-set splitbelow " open horizontal splits below
+syntax on 	" enable syntax highlighting
+filetype on 	" enable filetype detection
+set splitright 	" vertical split opens to the right
+set splitbelow 	" open horizontal splits below
+set nowrap      " don't wrap text
+set ruler       " show horizontal & vertical cursor position
+set tabstop=4   " tab width is 4 spaces
+set expandtab   " replace tab with equivalent # of spaces
 
 " autocompletion/popup menu options
 highlight Pmenu ctermbg=DarkRed ctermfg=White cterm=bold
@@ -62,5 +73,5 @@ autocmd FileType ruby let g:rubycomplete_buffer_loading=1 " load current buffer 
 autocmd FileType html setlocal shiftwidth=2 tabstop=2 number
 
 " for swift files
-autocmd FileType swift setlocal shiftwidth=4 tabstop=4 noexpandtab number " swift indentation style
+autocmd FileType swift setlocal number nowrap
 autocmd FileType swift let g:syntastic_swift_checkers = ['swiftpm', 'swiftlint']
