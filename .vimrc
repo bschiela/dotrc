@@ -50,11 +50,12 @@ filetype plugin indent on    " required (allow filetype-specific plugins and ind
 " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 
 " Put your non-Plugin stuff after this line
+set statusline="%f"
 syntax on 	" enable syntax highlighting
 filetype on 	" enable filetype detection
 set splitright 	" vertical split opens to the right
 set splitbelow 	" open horizontal splits below
-set nowrap      " don't wrap text
+set wrap        " wrap text at window edge
 set ruler       " show horizontal & vertical cursor position
 set tabstop=4   " tab width is 4 spaces
 set expandtab   " replace tab with equivalent # of spaces
