@@ -2,15 +2,14 @@ set nocompatible " no vi
 set backspace=indent,eol,start " sensical backspaces
 set ruler " current line and column number
 
-" Vundle """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
+" vim-plug """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-call vundle#end()
-
-filetype plugin indent on
+call plug#begin('~/.vim/plugged')
+Plug 'junegunn/vim-plug'
+call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-syntax on " syntax highlighting
