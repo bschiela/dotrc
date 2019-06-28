@@ -13,3 +13,5 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-plug'
 call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+set splitbelow splitright
