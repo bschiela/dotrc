@@ -15,3 +15,4 @@ call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set splitbelow splitright
+set background=dark
