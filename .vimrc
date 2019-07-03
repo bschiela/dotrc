@@ -11,6 +11,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-plug'
+Plug 'nvie/vim-flake8', { 'for': 'python' }
 call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
