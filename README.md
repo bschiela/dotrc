@@ -102,6 +102,7 @@ Command reference
 ### Windows
 - `:sp`(`vsp`)    : split horizontally (vertically)
 - `Ctrl-w {...}`
+  - `s`(`v`)      : split horizontally (vertically)
   - `n`           : new
   - `Ctrl-w`      : cycle focus
   - `{direction}` : move focus
