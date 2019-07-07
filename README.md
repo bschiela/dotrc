@@ -1,7 +1,3 @@
-.vim
-====
-personal vim configuration
-
 Installation
 ------------
 1. Clone to `~/.vim`:
@@ -22,88 +18,93 @@ Installation
 Command reference
 -----------------
 ### Help
-`:help cmd` : help for <cmd>
+`:help {cmd}`
 
 
 ### Navigation
 
 #### page / scroll
-`Ctrl-f`(`b`) : page forward (back) -- scroll
-`Ctrl-d`(`u`) : half-page down (up)
-`Ctrl-e`(`y`) : line down (up) -- scroll
+- `Ctrl-f`(`b`) : page forward (back) -- scroll
+- `Ctrl-d`(`u`) : half-page down (up)
+- `Ctrl-e`(`y`) : line down (up) -- scroll
 
-`z+`(`z^`)    : full page down (up)
-`zz`(`z.`)    : line center (beginning of line)
-`zt`(`zb`)    : line top (bottom)
+- `z+`(`z^`)    : full page down (up)
+- `zz`(`z.`)    : line center (& beginning of line)
+- `zt`(`zb`)    : line top (bottom)
 
 #### block
-`)`(`}`) : down block (whitespace)
-`(`(`{`) : up block (whitespace)
+- `)`(`}`) : down (whitespace) block
+- `(`(`{`) : up (whitespace) block
 
 #### line
-`G`      : last line
-`gg`     : first line
-`#G`     : line <#>
-`^`(`0`) : beginning (whitespace)
-`$`      : end
+- `G`      : last line
+- `gg`     : first line
+- `{#}G`   : line {#}
+- `^`(`0`) : beginning (whitespace)
+- `$`      : end
 
 #### word
-`w`(`W`)   : next word (by whitepace)
-`b`(`B`)   : back word (by whitespace)
-`e`(`E`)   : end word (by whitespace) 
-`ge`(`gE`) : back end word (by whitespace)
+- `w`(`W`)   : next word (by whitepace)
+- `b`(`B`)   : back word (by whitespace)
+- `e`(`E`)   : end word (by whitespace) 
+- `ge`(`gE`) : back end word (by whitespace)
 
 #### character
-`fc` : forward to <c>
+- `f{char}` : forward to {char}
 
 #### mark
-`mc` : set mark <c>
-`'c` : go to mark <c>
-`'.` : last edit
-`''` : before jump
+- `m{char}` : set mark {char}
+- `'{char}` : go to mark {char}
+- `'.`      : last edit
+- `''`      : before jump
 
 #### search
-`/word`  : search <word>
-`n`(`N`) : next (previous)
-`*`      : search word under cursor
+- `/{string}`  : search {string}
+- `n`(`N`)     : next (previous)
+- `*`          : search word under cursor
 
 
 ### Editing
-`>>`(`<<`) : (un)indent
+- `u`      : undo
+- `Ctrl-r` : redo
 
-#### enter insert mode
-`i`(`I`)    : insert char (line)
-`a`(`A`)    : after char (line)
-`s`(`S`)    : substitute char (line)
-`o`(`O`)    : next (previous) line
-`c{motion}` : change {motion} (see [Navigation](#navigation))
-- `ciw` : change inner word (under cursor)
-- `cfx` : change forward to <x>
+- `i`(`I`)      : insert char (line)
+- `a`(`A`)      : after char (line)
+- `s`(`S`)      : substitute char (line)
+- `r`(`R`)      : replace char (enter replace mode)
+- `o`(`O`)      : insert next (previous) line
+- `c{motion}`   : change {motion} (see [Navigation](#navigation))
+  - `ciw`       : change inner word (under cursor)
+  - `cf{char}`  : change forward to {char}
+- 'C'           : change to end of line
 
-#### delete (cut), yank (copy), paste
-`x`(`X`)         : delete (backspace)
-`dd`             : delete line
-`d#d`            : delete <#> lines
-`["r]d{motion}`  : delete <motion> into register <r>
-                   (see [navigation](#navigation))
-- `diw`          : delete inner word (under cursor)
-- `dfx`          : delete forward to <x>
-yank: same as delete with `d` &rarr; `y`
-`["r]p`(`P`)     : paste after (before) from register <r>
+- `x`(`X`)         : delete (backspace)
+- `dd`(`D`)        : delete (to end of) line
+- `d{#}d`          : delete {#} lines
+- `["r]d{motion}`  : delete {motion} into register r
+                     (see [Navigation](#navigation))
+  - `diw`          : delete inner word (under cursor)
+  - `df{char}`     : delete forward to {char}
+- `["r]p`(`P`)     : paste after (before) from register r
+- `d` &rarr; `y`   : yank, i.e. copy
 
-`u`      : undo
-`Ctrl-r` : redo
+- `>>`(`<<`) : (un)indent
+
 
 ### Record / playback
-`.`  : repeat last edit
-`qx` : start recording to register <x>
-`q`  : stop recording
-`@x` : playback from register <x>
-`@@` : repeat last playback
+- `.`  : repeat last edit
+- `qr` : start recording to register r
+- `q`  : stop recording
+- `@r` : playback from register r
+- `@@` : repeat last playback
+
 
 ### Windows
-`:sp`(`vsp`)       : split horizontally (vertically)
-`Ctrl-w Ctrl-w`    : cycle focus
-`Ctrl-w{direction} : move focus
-`Ctrl-w +`(`-`)    : taller (shorter)
-`Ctrl-w >`(`<`)    : wider (narrower)
+- `:sp`(`vsp`)    : split horizontally (vertically)
+- `Ctrl-w {...}`
+  - `n`           : new
+  - `Ctrl-w`      : cycle focus
+  - `{direction}` : move focus
+  - `+`(`-`)      : taller (shorter)
+  - `>`(`<`)      : wider (narrower)
+  - `=`           : equal size
