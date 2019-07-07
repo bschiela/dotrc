@@ -26,7 +26,6 @@ Command reference
 - `Ctrl-f`(`b`) : page forward (back) -- scroll
 - `Ctrl-d`(`u`) : half-page down (up)
 - `Ctrl-e`(`y`) : line down (up) -- scroll
-
 - `z+`(`z^`)    : full page down (up)
 - `zz`(`z.`)    : line center (& beginning of line)
 - `zt`(`zb`)    : line top (bottom)
@@ -73,7 +72,7 @@ Command reference
 - `c{motion}`   : change {motion} (see [Navigation](#navigation))
   - `ciw`       : change inner word (under cursor)
   - `cf{char}`  : change forward to {char}
-- 'C'           : change to end of line
+- `C`           : change to end of line
 
 #### cut, copy, paste
 - `x`(`X`)         : delete (backspace)
