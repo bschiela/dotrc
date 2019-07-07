@@ -9,11 +9,11 @@ Installation
    $ ln -s ~/.vim/.vimrc ~/.vimrc
    ```
 3. Install plugins:
-   > `vim-plug` installs automatically when `.vimrc` is first executed
    ```sh
    $ source ~/.vimrc
    $ vim +PlugInstall
    ```
+   > `vim-plug` installs automatically when `.vimrc` is first executed
 
 Command reference
 -----------------
@@ -22,7 +22,6 @@ Command reference
 
 
 ### Navigation
-
 #### page / scroll
 - `Ctrl-f`(`b`) : page forward (back) -- scroll
 - `Ctrl-d`(`u`) : half-page down (up)
@@ -65,9 +64,7 @@ Command reference
 
 
 ### Editing
-- `u`      : undo
-- `Ctrl-r` : redo
-
+#### insert, substitute, replace, change
 - `i`(`I`)      : insert char (line)
 - `a`(`A`)      : after char (line)
 - `s`(`S`)      : substitute char (line)
@@ -78,6 +75,7 @@ Command reference
   - `cf{char}`  : change forward to {char}
 - 'C'           : change to end of line
 
+#### cut, copy, paste
 - `x`(`X`)         : delete (backspace)
 - `dd`(`D`)        : delete (to end of) line
 - `d{#}d`          : delete {#} lines
@@ -88,9 +86,11 @@ Command reference
 - `["r]p`(`P`)     : paste after (before) from register r
 - `d` &rarr; `y`   : yank, i.e. copy
 
-- `>>`(`<<`) : (un)indent
-
+#### misc.
+- `u`(`Ctrl-r`) : undo (redo)
+- `>>`(`<<`)    : (un)indent
 - `Ctrl-n`(`p`) : autocomplete next (previous)
+
 
 ### Record / playback
 - `.`  : repeat last edit
