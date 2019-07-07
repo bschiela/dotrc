@@ -90,6 +90,7 @@ Command reference
 
 - `>>`(`<<`) : (un)indent
 
+- `Ctrl-n`(`p`) : autocomplete next (previous)
 
 ### Record / playback
 - `.`  : repeat last edit
