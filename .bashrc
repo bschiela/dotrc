@@ -3,4 +3,4 @@ if [[ $OSTYPE == "darwin"* ]]; then  # macOS
   export LSCOLORS=gxfxcxdxbxegedabagacad
 fi
 
-PS1='[\#]\[\e[33;4m\]\u@\h\[\e[00m\]:\[\e[36m\]\w\[\e[00m\]$([ \j -ne 0 ] && echo \(\j\))\$ '
+PS1='[\!]\[\e[33;4m\]\u@\h\[\e[00m\]:\[\e[36m\]\w\[\e[00m\]$([ \j -ne 0 ] && echo \(\j\))\$ '
