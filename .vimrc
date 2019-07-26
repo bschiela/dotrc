@@ -2,6 +2,9 @@ set nocompatible " no vi
 set backspace=indent,eol,start " sensical backspaces
 set ruler " current line and column number
 
+set background=dark
+set splitbelow splitright
+
 " vim-plug """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -16,6 +19,3 @@ Plug 'ervandew/supertab'
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
 call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-set splitbelow splitright
-set background=dark
