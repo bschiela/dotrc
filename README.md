@@ -61,6 +61,11 @@ Command reference
 - `n`(`N`)     : next (previous)
 - `*`          : search word under cursor
 
+#### tags
+- `:tag {tag}`       : go to {tag}
+- `Ctrl-]`           : go to tag under cursor
+- `Ctrl-t` or `:pop` : go back
+
 
 ### Editing
 #### insert, substitute, replace, change
