@@ -14,7 +14,7 @@ Plug 'junegunn/vim-plug'
 Plug 'jeffkreeftmeijer/vim-numbertoggle' | set number relativenumber
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
 call plug#end()
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set splitbelow splitright
 set background=dark
