@@ -12,6 +12,7 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-plug'
 Plug 'jeffkreeftmeijer/vim-numbertoggle' | set number relativenumber
+Plug 'davidhalter/jedi-vim', {'for': 'python'}
 call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
