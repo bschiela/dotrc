@@ -5,6 +5,9 @@ set ruler " current line and column number
 set background=dark
 set splitbelow splitright
 
+" default tab and indent settings
+set smarttab expandtab tabstop=4 shiftwidth=4
+
 " vim-plug """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs

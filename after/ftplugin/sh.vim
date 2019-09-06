@@ -1,1 +1,1 @@
-set expandtab shiftwidth=2 smarttab
+set smarttab expandtab tabstop=2 shiftwidth=2
