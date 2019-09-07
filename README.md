@@ -1,7 +1,9 @@
 Installation
 ------------
-```bash
+Clone and run the `install` script:
+
+```sh
 $ git clone https://github.com/bschiela/bash.git ~/repos/bash
-$ ln -s ~/repos/bash/.bashrc ~/.bashrc
+$ ~/repos/bash/install
 ```
-> Symlink `.bash_profile` for login shells.
+> Rename `~/.bashrc` to `~/.bash_profile` for login shells (e.g. on macOS).
