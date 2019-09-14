@@ -109,3 +109,7 @@ Command reference
   - `+`(`-`)      : taller (shorter)
   - `>`(`<`)      : wider (narrower)
   - `=`           : equal size
+
+
+### Screen
+- `Ctrl-l` : redraw screen
