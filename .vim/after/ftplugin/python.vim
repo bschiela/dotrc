@@ -1,1 +1,2 @@
-let g:jedi#show_call_signatures = "2"
+setlocal noshowmode
+let g:jedi#show_call_signatures = 2
