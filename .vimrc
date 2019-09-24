@@ -8,6 +8,9 @@ set splitbelow splitright
 " default tab and indent settings
 set smarttab expandtab tabstop=4 shiftwidth=4
 
+" default word-wrapping and line-breaking settings
+set wrap linebreak
+
 " vim-plug """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
