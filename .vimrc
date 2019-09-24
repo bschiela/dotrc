@@ -11,6 +11,8 @@ set smarttab expandtab tabstop=4 shiftwidth=4
 " default word-wrapping and line-breaking settings
 set wrap linebreak
 
+set completeopt+=longest
+
 " vim-plug """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -21,6 +23,10 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-plug'
 Plug 'jeffkreeftmeijer/vim-numbertoggle' | set number relativenumber
+Plug 'ervandew/supertab'
+let g:SuperTabDefaultCompletionType='<c-x><c-o>'
+let g:SuperTabMappingForward='<s-tab>'
+let g:SuperTabMappingBackward='<tab>'
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
 Plug 'lervag/vimtex'
 call plug#end()
