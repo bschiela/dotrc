@@ -27,6 +27,10 @@ Plug 'ervandew/supertab'
 let g:SuperTabDefaultCompletionType='<c-x><c-o>'
 let g:SuperTabMappingForward='<s-tab>'
 let g:SuperTabMappingBackward='<tab>'
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
 Plug 'lervag/vimtex'
 call plug#end()
