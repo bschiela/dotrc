@@ -17,6 +17,8 @@ Command reference
 
 
 ### Navigation
+- `Ctrl-o {cmd}` : do {cmd} in normal mode
+
 #### page / scroll
 - `Ctrl-f`(`b`) : page forward (back) -- scroll
 - `Ctrl-d`(`u`) : half-page down (up)
