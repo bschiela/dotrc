@@ -21,7 +21,6 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-plug'
 Plug 'jeffkreeftmeijer/vim-numbertoggle' | set number relativenumber
-Plug 'ervandew/supertab'
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
 Plug 'lervag/vimtex'
 call plug#end()
