@@ -87,9 +87,12 @@ Command reference
 - `["r]p`(`P`)     : paste after (before) from register r
 - `d` &rarr; `y`   : yank, i.e. copy
 
+#### format
+- `>>`(`<<`) : (un)indent
+- `gq`       : format to `textwidth`
+
 #### misc.
 - `u`(`Ctrl-r`) : undo (redo)
-- `>>`(`<<`)    : (un)indent
 - `Ctrl-n`(`p`) : autocomplete next (previous)
 
 
