@@ -88,8 +88,8 @@ Command reference
 - `d` &rarr; `y`   : yank, i.e. copy
 
 #### format
-- `>>`(`<<`) : (un)indent
-- `gq`       : format to `textwidth`
+- `>>`(`<<`)   : (un)indent
+- `gq{motion}` : format to `textwidth`
 
 #### misc.
 - `u`(`Ctrl-r`)   : undo (redo)
