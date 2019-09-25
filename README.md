@@ -92,8 +92,9 @@ Command reference
 - `gq`       : format to `textwidth`
 
 #### misc.
-- `u`(`Ctrl-r`) : undo (redo)
-- `Ctrl-n`(`p`) : autocomplete next (previous)
+- `u`(`Ctrl-r`)   : undo (redo)
+- `Ctrl-n`(`p`)   : autocomplete next (previous)
+- `Ctrl-x Ctrl-o` : omnicompletion
 
 
 ### Record / playback
