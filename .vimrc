@@ -35,3 +35,6 @@ Plug 'davidhalter/jedi-vim', {'for': 'python'}
 Plug 'lervag/vimtex'
 call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" filetype specific
+let g:tex_flavor='latex'
