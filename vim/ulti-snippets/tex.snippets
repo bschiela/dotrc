@@ -1,6 +1,17 @@
+global !p
+thm_abbrevs = {'definition': 'def', 'axiom': 'ax', 'problem': 'prob',
+    'example': 'ex'}
+
+def thm_label_prefix(env_name):
+	if env_name in thm_abbrevs.keys():
+		return thm_abbrevs[env_name]
+	else:
+		return 'thm'
+endglobal
+
 snippet thm "Theorem environments" b
 \begin{${1:theorem}}[${2:name}]
-	\label{thm:${2/(\w+)\s(\w)/\l$1-\l$2/g}}
+	\label{`!p snip.rv=thm_label_prefix(t[1])`:${2/(\w+)\s(\w)/\l$1-\l$2/g}}
 	$0
 \end{$1}
 endsnippet
