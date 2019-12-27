@@ -36,6 +36,7 @@ let g:UltiSnipsSnippetsDir = '~/.vim/' . mySnippetsDir
 let g:UltiSnipsSnippetDirectories = ['UltiSnips',mySnippetsDir]
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
 Plug 'lervag/vimtex'
+Plug 'tpope/vim-surround'
 call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
