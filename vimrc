@@ -34,7 +34,6 @@ let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
 Plug 'lervag/vimtex'
 Plug 'tpope/vim-surround'
-Plug 'ludovicchabant/vim-gutentags'
 call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
