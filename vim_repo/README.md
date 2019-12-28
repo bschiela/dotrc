@@ -1,14 +1,3 @@
-Installation
-------------
-Clone and run the `install` script:
-
-```sh
-$ git clone https://github.com/bschiela/vim.git ~/repos/vim
-$ ~/repos/vim/install
-```
-
-> Plugins are automatically installed the first time `vim` is executed.
-
 Command reference
 -----------------
 ### Help
