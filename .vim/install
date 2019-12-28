@@ -1,5 +1,0 @@
-#! /bin/bash
-
-home_to_here=$(realpath $(dirname $BASH_SOURCE) --relative-to ~)
-ln -s $home_to_here/.vim   ~/.vim
-ln -s $home_to_here/.vimrc ~/.vimrc

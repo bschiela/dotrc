@@ -1,7 +1,15 @@
 #! /bin/bash
 
 home_to_here=$(realpath $(dirname $BASH_SOURCE) --relative-to ~)
+
+# bash
+########
 ln -s $home_to_here/.bashrc ~/.bashrc
-if [[ $OSTYPE == linux-gnu* ]]; then # WSL, GNU
+if [[ $OSTYPE == linux-gnu* ]]; then  # WSL, GNU
   ln -s $home_to_here/.dir_colors ~/.dir_colors
 fi
+
+# vim
+#######
+ln -s $home_to_here/.vim   ~/.vim
+ln -s $home_to_here/.vimrc ~/.vimrc
