@@ -1,19 +1,18 @@
-set nocompatible " no vi
-set backspace=indent,eol,start " sensical backspaces
-set ruler " current line and column number
-
+set nocompatible                " no vi
+set backspace=indent,eol,start  " sensical backspaces
+" appearance
+set ruler
 set showcmd
 set background=dark
+" searching
 set hlsearch
 set ignorecase smartcase
+" windows
 set splitbelow splitright
-
-" default tab and indent settings
+" formatting
 set smarttab expandtab tabstop=4 shiftwidth=4
-
-" default word-wrapping and line-breaking settings
 set wrap linebreak
-
+" autocomplete
 set completeopt+=longest
 
 " vim-plug """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
