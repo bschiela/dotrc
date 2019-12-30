@@ -2,7 +2,10 @@ set nocompatible " no vi
 set backspace=indent,eol,start " sensical backspaces
 set ruler " current line and column number
 
+set showcmd
 set background=dark
+set hlsearch
+set ignorecase smartcase
 set splitbelow splitright
 
 " default tab and indent settings
