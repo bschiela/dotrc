@@ -38,6 +38,3 @@ Plug 'lervag/vimtex'
 Plug 'tpope/vim-surround'
 call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" filetype specific
-let g:tex_flavor='latex'
