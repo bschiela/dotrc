@@ -19,6 +19,7 @@ Command reference
 #### block
 - `)`(`}`) : down (whitespace) block
 - `(`(`{`) : up (whitespace) block
+- `%`      : matching delimiter
 
 #### line
 - `G`      : last line
@@ -45,7 +46,7 @@ Command reference
 #### search
 - `/{string}`  : search {string}
 - `n`(`N`)     : next (previous)
-- `*`          : search word under cursor
+- `*`(`#`)     : search word under cursor (backwards)
 
 #### tags
 - `:tag {tag}`       : go to {tag}
