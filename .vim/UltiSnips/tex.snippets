@@ -11,7 +11,7 @@ endglobal
 
 snippet thm "Theorem environments" b
 \begin{${1:theorem}}[${2:name}]
-	\label{`!p snip.rv=thm_label_prefix(t[1])`:${2/(\w*)\s(\w*)/\L$1-$2\E/g}$3}
+	\label{`!p snip.rv = thm_label_prefix(t[1])`:${2/(\w*)\s(\w*)/\L$1-$2\E/g}$3}
 	$0
 \end{$1}
 endsnippet
