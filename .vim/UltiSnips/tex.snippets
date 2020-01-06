@@ -19,3 +19,7 @@ endsnippet
 snippet ca "Cite author"
 \citeauthor{$1} $0
 endsnippet
+
+snippet "([Ii]\.e\.|[Ee]\.g\.|[Cc]f\.|[Nn]\.b\.|vs\.) " "Post-abbreviation space" wrA
+`!p snip.rv = match[1]`\ $0
+endsnippet
