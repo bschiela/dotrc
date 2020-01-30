@@ -23,3 +23,7 @@ endsnippet
 snippet "([Ii]\.e\.|[Ee]\.g\.|[Cc]f\.|[Nn]\.b\.|vs\.) " "Post-abbreviation space" wrA
 `!p snip.rv = match[1]`\ $0
 endsnippet
+
+snippet "vec(\w)|(\w)vec" "Vectors" ir
+\vec{`!p snip.rv = match[1] if match[1] else match[2]`} $0
+endsnippet
