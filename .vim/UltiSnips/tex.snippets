@@ -31,3 +31,7 @@ endsnippet
 snippet "\\\{" "Close bracket" wr
 \\\{$1\\\}
 endsnippet
+
+snippet "([_^])([^\s_^]*)" "Subscripts/Superscripts" wr
+`!p snip.rv = match[1]`\{`!p snip.rv = match[2]`\}
+endsnippet
