@@ -27,3 +27,7 @@ endsnippet
 snippet "vec(\w)|(\w)vec" "Vectors" ir
 \\vec{`!p snip.rv = match[1] if match[1] else match[2]`}
 endsnippet
+
+snippet "\\\{" "Close bracket" wr
+\\\{$1\\\}
+endsnippet
