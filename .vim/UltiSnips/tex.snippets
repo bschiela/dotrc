@@ -24,8 +24,8 @@ snippet "vec(\w)|(\w)vec" "Vectors" ir
 \\vec{`!p snip.rv = match[1] if match[1] else match[2]`}
 endsnippet
 
-snippet "\\\{" "Close bracket" wr
-\\\{$1\\\}
+snippet "(\\)?\{" "Close opened curly-brace" wr
+`!p snip.rv = match[1] if match[1] else ""`\{$1`!p snip.rv = match[1] if match[1] else ""`\}
 endsnippet
 
 snippet "([_^])([^\s_^]*)" "Subscripts/Superscripts" wr
