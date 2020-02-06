@@ -32,6 +32,6 @@ snippet "([_^])([^{][^\s]*)" "Subscripts/Superscripts" wr
 `!p snip.rv = match[1]`\{`!p snip.rv = match[2]`\}
 endsnippet
 
-snippet "(frac|dv|pdv)" "Fraction-like" wr
+snippet "(frac|dv|pdv|fdv)" "Fraction-like" wr
 \\`!p snip.rv = match[1]`{$1}{$2} $0
 endsnippet
