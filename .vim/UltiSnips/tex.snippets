@@ -28,7 +28,7 @@ snippet "(\\)?\{" "Close opened curly-brace" wr
 `!p snip.rv = match[1] if match[1] else ""`\{$1`!p snip.rv = match[1] if match[1] else ""`\}
 endsnippet
 
-snippet "([_^])([^{][^\s]*)" "Subscripts/Superscripts" wr
+snippet "([_^])(?!{)([^\s}]{2,}}?)" "Subscripts/Superscripts" wr
 `!p snip.rv = match[1]`\{`!p snip.rv = match[2]`\}
 endsnippet
 
