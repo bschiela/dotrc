@@ -20,8 +20,8 @@ snippet "([Ii]\.e\.|[Ee]\.g\.|[Cc]f\.|[Nn]\.b\.|vs\.|[Aa].k.a.) " "Post-abbrevia
 `!p snip.rv = match[1]`\ $0
 endsnippet
 
-snippet "vec(\w)|(\w)vec" "Vectors" ir
-\\vec{`!p snip.rv = match[1] if match[1] else match[2]`}
+snippet "(\w)(uvec|vec|ddot|dot|hat)" "Vector-like" ir
+\\`!p snip.rv = match[2]`{`!p snip.rv = match[1]`}
 endsnippet
 
 snippet "(\\)?\{" "Close opened curly-brace" wr
