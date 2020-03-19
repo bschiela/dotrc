@@ -45,6 +45,10 @@ snippet "\\?(frac|dv|pdv|fdv)" "Fraction-like" wr
 \\`!p snip.rv = match[1]`{$1}{$2}
 endsnippet
 
+snippet "(\S+)\|" "Evaluate at" wr
+\\eval{`!p snip.rv = match[1]`}_{$1} $0
+endsnippet
+
 priority -1
 
 snippet "([_^])(?!{)([^\s}]{2,}}?)" "Subscripts/Superscripts" wr
