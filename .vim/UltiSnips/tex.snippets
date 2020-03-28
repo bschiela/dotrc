@@ -49,6 +49,10 @@ snippet "(\S+)\|" "Evaluate at" wr
 \\eval{`!p snip.rv = match[1]`}_{$1} $0
 endsnippet
 
+snippet emp "Emphasis" w
+\\emph{$1}
+endsnippet
+
 priority -1
 
 snippet "([_^])(?!{)([^\s}]{2,}}?)" "Subscripts/Superscripts" wr
