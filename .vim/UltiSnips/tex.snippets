@@ -53,7 +53,13 @@ snippet emp "Emphasis" w
 \\emph{$1}
 endsnippet
 
+snippet href "Hyperrefs" w
+\href{${1:url}}{${2:text}}
+endsnippet
+
+
 priority -1
+
 
 snippet "([_^])(?!{)([^\s}]{2,}}?)" "Subscripts/Superscripts" wr
 `!p snip.rv = match[1]`\{`!p snip.rv = match[2]`\}
