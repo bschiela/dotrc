@@ -38,10 +38,14 @@ Command reference
 - `f{char}` : forward to {char}
 
 #### mark
-- `m{char}` : set mark {char}
-- `'{char}` : go to mark {char}
-- `'.`      : last edit
-- `''`      : before jump
+- `:marks`            : list marks
+- `m{char}`           : set mark {char}
+- `` ` ``(`'`)...        : go to position (line)...
+  - `{char}`            : custom mark {char}
+  - `.`                 : last change
+  - `"`                 : last exit
+  - `` ` ``(`'`)           : before jump
+- `:delmarks {chars}` : delete marks {chars}
 
 #### search
 - `/{string}`  : search {string}
