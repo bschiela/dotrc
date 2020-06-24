@@ -57,6 +57,12 @@ Command reference
 - `Ctrl-]`           : go to tag under cursor
 - `Ctrl-t` or `:pop` : go back
 
+#### netrw file explorer
+- `:Ex`[`plore`] : open
+- `:`(`S`,`V`)`ex`[`plore`] : open horizontal, vertical split
+- `i` : cycle view
+- `I` : show banner
+
 
 ### Editing
 #### insert, substitute, replace, change
