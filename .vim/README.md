@@ -5,7 +5,35 @@ Command reference
 - `:help options` for options summary
 
 
-### Navigation
+### View
+#### buffers
+- `:e **/*{string}<tab>` : edit file matching {string}
+- `:ls`/`:buffers`       : list
+- `b{...}`               : show buffer ...
+  - `{#}`                  : number {#}
+  - `n`(`p`)               : cycle next (previous)
+  - `f`(`l`)               : first (last)
+- `<C-^>`          : toggle previous
+
+#### windows
+- `:sp`(`vsp`)    : split horizontally (vertically)
+- `Ctrl-w {...}`
+  - `s`(`v`)      : split horizontally (vertically)
+  - `n`           : new
+  - `Ctrl-w`      : cycle focus
+  - `{direction}` : move focus
+  - `+`(`-`)      : taller (shorter)
+  - `>`(`<`)      : wider (narrower)
+  - `=`           : equal size
+
+#### netrw file explorer
+- `:E`[`xplore`]        : open
+- `:Ve`(`Se`)[`xplore`] : open vertical (horizontal)
+- `i`                   : cycle view
+- `I`                   : show banner
+
+
+### Navigate
 - `Ctrl-o {cmd}` : do {cmd} in normal mode
 
 #### page / scroll
@@ -57,14 +85,8 @@ Command reference
 - `Ctrl-]`           : go to tag under cursor
 - `Ctrl-t` or `:pop` : go back
 
-#### netrw file explorer
-- `:Ex`[`plore`] : open
-- `:`(`S`,`V`)`ex`[`plore`] : open horizontal, vertical split
-- `i` : cycle view
-- `I` : show banner
 
-
-### Editing
+### Edit
 #### insert, substitute, replace, change
 - `i`(`I`)      : insert char (line)
 - `a`(`A`)      : after char (line)
@@ -96,25 +118,12 @@ Command reference
 - `Ctrl-n`(`p`)   : autocomplete next (previous)
 - `Ctrl-x Ctrl-o` : omnicompletion
 
-
-### Record / playback
+#### record / playback
 - `.`  : repeat last edit
 - `qr` : start recording to register r
 - `q`  : stop recording
 - `@r` : playback from register r
 - `@@` : repeat last playback
-
-
-### Windows
-- `:sp`(`vsp`)    : split horizontally (vertically)
-- `Ctrl-w {...}`
-  - `s`(`v`)      : split horizontally (vertically)
-  - `n`           : new
-  - `Ctrl-w`      : cycle focus
-  - `{direction}` : move focus
-  - `+`(`-`)      : taller (shorter)
-  - `>`(`<`)      : wider (narrower)
-  - `=`           : equal size
 
 
 ### Screen
