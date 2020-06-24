@@ -9,10 +9,11 @@ Command reference
 #### buffers
 - `:e **/*{string}<tab>` : edit file matching {string}
 - `:ls`/`:buffers`       : list
-- `b{...}`               : show buffer ...
+- `b{...}`               : switch buffer ...
   - `{#}`                  : number {#}
   - `n`(`p`)               : cycle next (previous)
   - `f`(`l`)               : first (last)
+  - ` {string}<tab>`       : name {string}
 - `<C-^>`          : toggle previous
 
 #### windows
