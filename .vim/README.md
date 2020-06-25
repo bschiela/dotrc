@@ -9,7 +9,7 @@ Command reference
 #### buffers
 - `:e **/*{string}<tab>` : edit file matching {string}
 - `:ls`/`:buffers`       : list
-- `b{...}`               : switch buffer ...
+- `:b{...}`               : switch buffer ...
   - `{#}`                  : number {#}
   - `n`(`p`)               : cycle next (previous)
   - `f`(`l`)               : first (last)
@@ -82,9 +82,14 @@ Command reference
 - `*`(`#`)     : search word under cursor (backwards)
 
 #### tags
-- `:tag {tag}`       : go to {tag}
-- `Ctrl-]`           : go to tag under cursor
-- `Ctrl-t` or `:pop` : go back
+- `:tags`         : history
+- `:tag {tag}`    : go to {tag}
+- `Ctrl-]`        : go to tag under cursor
+- `Ctrl-t`/`:pop` : pop back up
+- `:t{...}`
+  - `s`[`elect`]  : list
+  - `n`(`p`)      : cycle next (previous)
+  - `f`(`l`)      : first (last)
 
 
 ### Edit
