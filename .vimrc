@@ -24,6 +24,9 @@ set completeopt+=longest
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 
+" buffers
+nnoremap gb :ls<CR>:b<Space>
+
 " vim-plug
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
