@@ -14,7 +14,7 @@ Command reference
   - `n`(`p`)               : cycle next (previous)
   - `f`(`l`)               : first (last)
   - ` {string}<tab>`       : name {string}
-- `<C-^>`          : toggle previous
+- `Ctrl-^`               : toggle previous
 
 #### windows
 - `:sp`(`vsp`)    : split horizontally (vertically)
