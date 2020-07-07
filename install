@@ -13,4 +13,5 @@ ln -s $home_to_here/.vim   ~/.vim
 ln -s $home_to_here/.vimrc ~/.vimrc
 
 # git
+ln -s $home_to_here/git ~/.git
 ln -s $home_to_here/.gitconfig ~/.gitconfig

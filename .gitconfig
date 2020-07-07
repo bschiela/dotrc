@@ -1,5 +1,6 @@
 [core]
 	autocrlf = input
 	editor = vim
+	hooksPath = ~/.git/hooks
 [credential]
 	helper = cache --timeout 900
