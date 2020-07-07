@@ -16,7 +16,7 @@ See options `foldmethod` and `foldcolumn`.
 #### buffers
 - `:e **/*{string}<tab>` : edit file matching {string}
 - `:ls`/`:buffers`       : list
-- `:b{...}`               : switch buffer ...
+- `:b`...                : switch buffer ...
   - `{#}`                  : number {#}
   - `n`(`p`)               : cycle next (previous)
   - `f`(`l`)               : first (last)
@@ -25,7 +25,7 @@ See options `foldmethod` and `foldcolumn`.
 
 #### windows
 - `:sp`(`vsp`)    : split horizontally (vertically)
-- `Ctrl-w {...}`
+- `Ctrl-w`...
   - `s`(`v`)      : split horizontally (vertically)
   - `n`           : new
   - `Ctrl-w`      : cycle focus
@@ -76,11 +76,11 @@ See options `foldmethod` and `foldcolumn`.
 #### mark
 - `:marks`            : list marks
 - `m{char}`           : set mark {char}
-- `` ` ``(`'`)...        : go to position (line)...
+- `` ` ``(`'`)...     : go to position (line)...
   - `{char}`            : custom mark {char}
   - `.`                 : last change
   - `"`                 : last exit
-  - `` ` ``(`'`)           : before jump
+  - `` ` ``(`'`)        : before jump
 - `:delmarks {chars}` : delete marks {chars}
 
 #### search
@@ -93,7 +93,7 @@ See options `foldmethod` and `foldcolumn`.
 - `:tag {tag}`    : go to {tag}
 - `Ctrl-]`        : go to tag under cursor
 - `Ctrl-t`/`:pop` : pop back up
-- `:t{...}`
+- `:t`...
   - `s`[`elect`]  : list
   - `n`(`p`)      : cycle next (previous)
   - `f`(`l`)      : first (last)
@@ -107,8 +107,8 @@ See options `foldmethod` and `foldcolumn`.
 - `r`(`R`)      : replace char (enter replace mode)
 - `o`(`O`)      : insert next (previous) line
 - `c{motion}`   : change {motion} (see [Navigation](#navigation))
-  - `ciw`       : change inner word (under cursor)
-  - `cf{char}`  : change forward to {char}
+  - `ciw`         : change inner word (under cursor)
+  - `cf{char}`    : change forward to {char}
 - `C`           : change to end of line
 
 #### cut, copy, paste
@@ -117,8 +117,8 @@ See options `foldmethod` and `foldcolumn`.
 - `d{#}d`          : delete {#} lines
 - `["r]d{motion}`  : delete {motion} into register r
                      (see [Navigation](#navigation))
-  - `diw`          : delete inner word (under cursor)
-  - `df{char}`     : delete forward to {char}
+  - `diw`            : delete inner word (under cursor)
+  - `df{char}`       : delete forward to {char}
 - `["r]p`(`P`)     : paste after (before) from register r
 - `d` &rarr; `y`   : yank, i.e. copy
 
