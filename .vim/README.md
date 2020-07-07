@@ -77,9 +77,9 @@ Command reference
 - `:delmarks {chars}` : delete marks {chars}
 
 #### search
-- `/{string}`  : search {string}
-- `n`(`N`)     : next (previous)
-- `*`(`#`)     : search word under cursor (backwards)
+- `/`(`?`)`{string}` : search {string} (backwards)
+- `n`(`N`)           : next (previous)
+- `*`(`#`)           : search word under cursor (backwards)
 
 #### tags
 - `:tags`         : history
