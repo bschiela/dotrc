@@ -6,6 +6,13 @@ Command reference
 
 
 ### View
+#### folds
+See options `foldmethod` and `foldcolumn`.
+- `z`...
+  - `o`(`c`, `a`) : open (close, toggle) under cursor
+  - `r`(`m`)      : reduce (more) folding in buffer
+  - caps versions : all fold levels
+
 #### buffers
 - `:e **/*{string}<tab>` : edit file matching {string}
 - `:ls`/`:buffers`       : list
