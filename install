@@ -15,3 +15,6 @@ ln -s $home_to_here/.vimrc ~/.vimrc
 # git
 ln -s $home_to_here/git ~/.git
 ln -s $home_to_here/.gitconfig ~/.gitconfig
+
+# python
+ln -s ../$home_to_here/.config/flake8 ~/.config/flake8
