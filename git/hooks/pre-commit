@@ -1,4 +1,4 @@
 #!/bin/bash
 
-grep -Hn --color 'DO NOT COMMIT' $(git diff --cached --name-only)
+grep -Hni --color 'DO NOT COMMIT' $(git diff --cached --name-only)
 test $? -eq 1
