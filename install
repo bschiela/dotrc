@@ -14,6 +14,8 @@ ln -s $home_to_here/.vimrc ~/.vimrc
 
 # git
 ln -s $home_to_here/git ~/.git
+ln -s ~/.git/hooks/pre-commit git/templateDir/hooks/pre-commit
+ln -s ~/.git/hooks/pre-push git/templateDir/hooks/pre-push
 ln -s $home_to_here/.gitconfig ~/.gitconfig
 
 # python

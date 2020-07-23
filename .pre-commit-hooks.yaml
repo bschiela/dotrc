@@ -1,0 +1,8 @@
+- id: do-not-commit
+  name: DO NOT COMMIT
+  entry: ./git/hooks/pre-commit
+  language: script
+- id: do-not-push
+  name: DO NOT PUSH
+  entry: ./git/hooks/pre-push
+  language: script
