@@ -3,20 +3,20 @@
 home_to_here=$(realpath $(dirname $BASH_SOURCE) --relative-to ~)
 
 # bash
-ln -s $home_to_here/.bashrc ~/.bashrc
+ln -s $home_to_here/bashrc ~/.bashrc
 if [[ $OSTYPE == linux-gnu* ]]; then  # WSL, GNU
-  ln -s $home_to_here/.dir_colors ~/.dir_colors
+  ln -s $home_to_here/dir_colors ~/.dir_colors
 fi
 
 # vim
-ln -sT $home_to_here/.vim   ~/.vim
-ln -s $home_to_here/.vimrc ~/.vimrc
+ln -sT $home_to_here/vim   ~/.vim
+ln -s $home_to_here/vim/vimrc ~/.vimrc
 
 # git
 ln -sT $home_to_here/git ~/.git
 ln -s ~/.git/hooks/pre-commit git/templateDir/hooks/pre-commit
 ln -s ~/.git/hooks/pre-push git/templateDir/hooks/pre-push
-ln -s $home_to_here/.gitconfig ~/.gitconfig
+ln -s $home_to_here/git/gitconfig ~/.gitconfig
 
 # python
 ln -s ../$home_to_here/python/flake8 ~/.config/flake8
