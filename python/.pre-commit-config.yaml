@@ -5,6 +5,11 @@ repos:
     rev: master
     hooks:
       - id: do-not-commit
+  - repo: https://github.com/myint/autoflake
+    rev: b330072a26
+    hooks:
+      - id: autoflake
+        args: [-i, --remove-all-unused-imports]
   - repo: https://github.com/timothycrosley/isort
     rev: 5.1.4
     hooks:
