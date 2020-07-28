@@ -5,7 +5,7 @@ if [[ $OSTYPE == darwin* ]]; then  # macOS, BSD
   export LSCOLORS=gxfxcxdxbxegedabagacad
 elif [[ $OSTYPE == linux-gnu* ]]; then # WSL, GNU
   alias ls="ls --color=auto"
-  eval $(dircolors -b ./.dir_colors)
+  eval $(dircolors -b ~/.dir_colors)
   export DISPLAY=:0.0  # forward GUIs to Xming on WSL
 fi
 
