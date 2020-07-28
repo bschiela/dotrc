@@ -9,7 +9,7 @@ repos:
     rev: b330072a26
     hooks:
       - id: autoflake
-        args: [-i, --remove-all-unused-imports]
+        args: [-i, --remove-all-unused-imports, --ignore-init-module-imports]
   - repo: https://github.com/timothycrosley/isort
     rev: 5.1.4
     hooks:
