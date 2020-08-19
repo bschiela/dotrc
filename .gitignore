@@ -10,3 +10,4 @@ plugged/
 elpa/
 .emacs-custom.el
 .last-package-update-day
+url/
