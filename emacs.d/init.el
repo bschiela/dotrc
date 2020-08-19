@@ -19,6 +19,7 @@
              (setq auto-package-update-hide-results t)
              (auto-package-update-maybe))
 (use-package evil :ensure t :config (evil-mode t))
+(use-package org :ensure t)
 
 (setq custom-file "~/.emacs.d/.emacs-custom.el")
 (load custom-file)
