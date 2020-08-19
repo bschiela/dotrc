@@ -49,8 +49,9 @@ See options `foldmethod` and `foldcolumn`.
 - `Ctrl-d`(`u`) : half-page down (up)
 - `Ctrl-e`(`y`) : line down (up) -- scroll
 - `z+`(`z^`)    : full page down (up)
-- `zz`(`z.`)    : line center (& beginning of line)
-- `zt`(`zb`)    : line top (bottom)
+- `zz`(`z.`)    : scroll center (& beginning of line)
+- `zt`(`zb`)    : scroll top (bottom)
+- `L`,`M`,`H`   : lowest, middle, highest line
 
 #### block
 - `)`(`}`) : down (whitespace) block
