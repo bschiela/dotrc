@@ -1,4 +1,12 @@
+# vim
 autoload/
 plugged/
 .netrwhist
 *.spl
+*.swp
+
+# emacs
+*~
+elpa/
+.emacs-custom.el
+.last-package-update-day

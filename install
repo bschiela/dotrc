@@ -12,6 +12,9 @@ fi
 ln -sT ~/$home_to_here/vim   ~/.vim
 ln -s ~/$home_to_here/vim/vimrc ~/.vimrc
 
+# emacs
+ln -sT ~/$home_to_here/emacs.d ~/.emacs.d
+
 # git
 ln -sT ~/$home_to_here/git ~/.git
 ln -s ~/$home_to_here/git/gitconfig ~/.gitconfig
