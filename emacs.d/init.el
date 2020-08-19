@@ -6,12 +6,14 @@
 (setq package-enable-at-startup nil)
 (package-initialize)
 
+;;; use-package
 (unless (package-installed-p 'use-package)
         (package-refresh-contents)
         (package-install 'use-package)
 )
 (eval-when-compile (require 'use-package))
 
+;;; packages
 (use-package auto-package-update
              :ensure t
              :config
@@ -20,6 +22,10 @@
              (auto-package-update-maybe))
 (use-package evil :ensure t :config (evil-mode t))
 (use-package org :ensure t)
+
+;;; configuration
+
+(setq inhibit-startup-screen t)
 
 (setq custom-file "~/.emacs.d/.emacs-custom.el")
 (load custom-file)
