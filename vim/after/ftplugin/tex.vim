@@ -5,5 +5,6 @@ setlocal conceallevel=2
 highlight Conceal ctermbg=None ctermfg=LightRed
 
 setlocal spell spelllang=en_us
+highlight clear SpellLocal
 
 inoremap \[ \[\]<left><left>
