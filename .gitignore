@@ -11,3 +11,4 @@ elpa/
 .emacs-custom.el
 .last-package-update-day
 url/
+org-clock-save.el
