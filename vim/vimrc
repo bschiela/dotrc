@@ -29,9 +29,6 @@ map <Space> <Leader>
 " buffers
 nnoremap gb :ls<CR>:b<Space>
 
-" command-line mode mappings
-nnoremap <Leader>; :
-
 " insert mode mappings
 inoremap <C-V>d <C-r>=strftime('%m/%d/%Y')<CR>
 
