@@ -30,14 +30,20 @@
     (global-set-key (kbd "C-c c") 'org-capture)
     (global-set-key (kbd "C-c l") 'org-store-link)
     (setq org-todo-keywords
-        '((sequence "TODO" "NEXT" "BLOCKED" "BACKLOG" "CANCELLED" "DONE")))
+        '((sequence "TODO(t)" "BACKLOG(b)" "NEXT(n)" "ONGOING(o!/!)" "BLOCKED(k@)" "|" "CANCELLED(c@)" "DONE(d)")))
+    ;;; logging
+    (setq org-log-into-drawer t)
     (setq org-log-done t)
+    (setq org-log-note-clock-out t)
     ;;; clocking
     (org-clock-persistence-insinuate)
     (setq org-clock-persist 'clock)
     (setq org-clock-into-drawer t)
     (setq org-clock-out-when-done t)
-    (setq org-log-note-clock-out t))
+    ;;; agenda
+    (setq org-agenda-span 'day)
+    (setq org-agenda-skip-scheduled-if-done t)
+    (setq org-agenda-start-with-clockreport-mode t))
 
 ;;; configuration
 
