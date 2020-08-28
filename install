@@ -7,6 +7,7 @@ ln -s ~/$home_to_here/bashrc ~/.bashrc
 if [[ $OSTYPE == linux-gnu* ]]; then  # WSL, GNU
   ln -s ~/$home_to_here/dir_colors ~/.dir_colors
 fi
+ln -s ~/$home_to_here/inputrc ~/.inputrc
 
 # vim
 ln -sT ~/$home_to_here/vim   ~/.vim
