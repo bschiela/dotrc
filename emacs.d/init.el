@@ -44,6 +44,10 @@
     (setq org-agenda-span 'day)
     (setq org-agenda-skip-scheduled-if-done t)
     (setq org-agenda-start-with-clockreport-mode t))
+(use-package powerline
+    :ensure t
+    :config
+    (powerline-center-evil-theme))
 
 ;;; configuration
 
