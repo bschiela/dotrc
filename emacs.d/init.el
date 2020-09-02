@@ -43,7 +43,10 @@
     ;;; agenda
     (setq org-agenda-span 'day)
     (setq org-agenda-skip-scheduled-if-done t)
-    (setq org-agenda-start-with-clockreport-mode t))
+    (setq org-agenda-skip-deadline-if-done t)
+    (setq org-agenda-log-mode-items '(clock))
+    ;;; column view
+    (setq org-columns-default-format "%30ITEM %Effort{:} %CLOCKSUM"))
 (use-package powerline
     :ensure t
     :config
