@@ -35,7 +35,7 @@
     (global-set-key (kbd "C-c c") 'org-capture)
     (global-set-key (kbd "C-c l") 'org-store-link)
     (setq org-todo-keywords
-        '((sequence "TODO(t)" "BACKLOG(b)" "NEXT(n)" "ONGOING(o!/!)" "BLOCKED(k@)" "|" "CANCELLED(c@)" "DONE(d)")))
+        '((sequence "TODO(t)" "NEXT(n)" "BLOCKED(k@)" "|" "CANCELLED(c@)" "DONE(d)")))
     ;;; logging
     (setq org-log-into-drawer t)
     (setq org-log-done t)
