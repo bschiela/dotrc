@@ -26,7 +26,6 @@
     (auto-package-update-maybe))
 (use-package evil
     :ensure t
-    :init (setq evil-want-C-u-scroll t)
     :config (evil-mode t))
 (use-package org
     :ensure t
@@ -46,6 +45,7 @@
     (setq org-clock-persist 'clock)
     (setq org-clock-into-drawer t)
     (setq org-clock-out-when-done t)
+    (setq org-clock-out-remove-zero-time-clocks t)
     ;;; agenda
     (setq org-agenda-span 'day)
     (setq org-agenda-skip-scheduled-if-done t)
@@ -54,7 +54,11 @@
     ;;; column view
     (setq org-columns-default-format "%30ITEM %Effort{:} %CLOCKSUM")
     ;;; capture
-    (setq org-default-notes-file (concat org-directory "/_main.org"))
+    (setq org-capture-templates
+        '(("c" "clock into miscellaneous task" entry
+            (file+olp (concat org-directory "/work.org") "Archive" "Miscellaneous")
+                "* %?" :clock-in t)))
+    ;;; refile
     (setq org-refile-targets '((org-agenda-files :maxlevel . 5)))
     (setq org-refile-use-outline-path 'file)
     (setq org-refile-allow-creating-parent-nodes 'confirm))
