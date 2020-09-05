@@ -1,3 +1,8 @@
+(setq inhibit-startup-screen t)
+
+(setq custom-file "~/.emacs.d/.emacs-custom.el")
+(load custom-file)
+
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (add-to-list 'package-archives
@@ -26,6 +31,7 @@
 (use-package org
     :ensure t
     :config
+    (setq org-directory "~/winhome/Dropbox/orgzly")
     (global-set-key (kbd "C-c a") 'org-agenda)
     (global-set-key (kbd "C-c c") 'org-capture)
     (global-set-key (kbd "C-c l") 'org-store-link)
@@ -46,15 +52,13 @@
     (setq org-agenda-skip-deadline-if-done t)
     (setq org-agenda-log-mode-items '(clock))
     ;;; column view
-    (setq org-columns-default-format "%30ITEM %Effort{:} %CLOCKSUM"))
+    (setq org-columns-default-format "%30ITEM %Effort{:} %CLOCKSUM")
+    ;;; capture
+    (setq org-default-notes-file (concat org-directory "/_main.org"))
+    (setq org-refile-targets '((org-agenda-files :maxlevel . 5)))
+    (setq org-refile-use-outline-path 'file)
+    (setq org-refile-allow-creating-parent-nodes 'confirm))
 (use-package powerline
     :ensure t
     :config
     (powerline-center-evil-theme))
-
-;;; configuration
-
-(setq inhibit-startup-screen t)
-
-(setq custom-file "~/.emacs.d/.emacs-custom.el")
-(load custom-file)
