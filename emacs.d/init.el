@@ -36,6 +36,7 @@
     (global-set-key (kbd "C-c l") 'org-store-link)
     (setq org-todo-keywords
         '((sequence "TODO(t)" "NEXT(n)" "BLOCKED(k@)" "|" "CANCELLED(c@)" "DONE(d)")))
+    (setq org-tags-column -80)
     ;;; logging
     (setq org-log-into-drawer t)
     (setq org-log-done t)
@@ -57,7 +58,11 @@
     (setq org-capture-templates
         '(("c" "clock into miscellaneous task" entry
             (file+olp (concat org-directory "/work.org") "Archive" "Miscellaneous")
-                "* %?" :clock-in t)))
+                "* %?" :clock-in t)
+          ("n" "note")
+          ("nc" "clocked task" entry
+            (file+datetree "~/workspace/notebook/captains-log.org")
+                "* %^{title}   %^g\n%U during %K\n\n%?")))
     ;;; refile
     (setq org-refile-targets '((org-agenda-files :maxlevel . 5)))
     (setq org-refile-use-outline-path 'file)
