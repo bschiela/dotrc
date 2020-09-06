@@ -36,7 +36,6 @@
     (global-set-key (kbd "C-c l") 'org-store-link)
     (setq org-todo-keywords
         '((sequence "TODO(t)" "NEXT(n)" "BLOCKED(k@)" "|" "CANCELLED(c@)" "DONE(d)")))
-    (setq org-extend-today-until 3)
     ;;; logging
     (setq org-log-into-drawer t)
     (setq org-log-done t)
