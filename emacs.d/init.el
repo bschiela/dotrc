@@ -60,9 +60,12 @@
             (file+olp (concat org-directory "/work.org") "Archive" "Miscellaneous")
                 "* %?" :clock-in t)
           ("n" "note")
+          ("nn" "quick note" entry
+            (file+datetree "~/workspace/notebook/captains-log.org")
+                "* %^{title} %^g\n%U\n\n%?")
           ("nc" "clocked task" entry
             (file+datetree "~/workspace/notebook/captains-log.org")
-                "* %^{title}   %^g\n%U during %K\n\n%?")))
+                "* %^{title} %^g\n%U during %K\n\n%?")))
     ;;; refile
     (setq org-refile-targets '((org-agenda-files :maxlevel . 5)))
     (setq org-refile-use-outline-path 'file)
