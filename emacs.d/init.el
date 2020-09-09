@@ -3,6 +3,8 @@
 (setq custom-file "~/.emacs.d/.emacs-custom.el")
 (load custom-file)
 
+(setq fill-column 80)
+
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (add-to-list 'package-archives
@@ -30,6 +32,7 @@
 (use-package org
     :ensure t
     :config
+    ;; global
     (setq org-directory "~/winhome/Dropbox/orgzly")
     (global-set-key (kbd "C-c a") 'org-agenda)
     (global-set-key (kbd "C-c c") 'org-capture)
@@ -69,7 +72,9 @@
     ;;; refile
     (setq org-refile-targets '((org-agenda-files :maxlevel . 5)))
     (setq org-refile-use-outline-path 'file)
-    (setq org-refile-allow-creating-parent-nodes 'confirm))
+    (setq org-refile-allow-creating-parent-nodes 'confirm)
+    ;;; latex
+    (setq org-latex-create-formula-image-program 'dvipng))
 (use-package powerline
     :ensure t
     :config
