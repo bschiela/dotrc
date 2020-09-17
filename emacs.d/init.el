@@ -3,7 +3,7 @@
 (setq custom-file "~/.emacs.d/.emacs-custom.el")
 (load custom-file)
 
-(setq fill-column 80)
+(setq-default fill-column 80)
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
@@ -46,7 +46,8 @@
     (setq org-log-note-clock-out t)
     ;;; clocking
     (org-clock-persistence-insinuate)
-    (setq org-clock-persist 'clock)
+    (setq org-clock-persist t)
+    (setq org-clock-history-length 10)
     (setq org-clock-into-drawer t)
     (setq org-clock-out-when-done t)
     (setq org-clock-out-remove-zero-time-clocks t)
@@ -60,7 +61,7 @@
     ;;; capture
     (setq org-capture-templates
         '(("c" "clock into miscellaneous task" entry
-            (file+olp (concat org-directory "/work.org") "Archive" "Miscellaneous")
+            (file+olp (concat org-directory "/work.org") "miscellaneous")
                 "* %?" :clock-in t)
           ("n" "note")
           ("nn" "quick note" entry
