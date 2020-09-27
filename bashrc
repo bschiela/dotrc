@@ -14,3 +14,4 @@ PS1='[\!]\[\e[33;4m\]\u@\h\[\e[00m\]:\[\e[36m\]\w\[\e[00m\]$([ \j -ne 0 ] && ech
 export HISTTIMEFORMAT="[%_m/%d %a %_I:%M:%S %p] "
 
 alias mv='mv -i'
+alias cp='cp -i'
