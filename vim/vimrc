@@ -30,7 +30,7 @@ map <Space> <Leader>
 nnoremap gb :ls<CR>:b<Space>
 
 " insert mode mappings
-inoremap <C-V>d <C-r>=strftime('%m/%d/%Y')<CR>
+inoremap <C-V>d <C-r>=strftime('%-m/%-d/%Y')<CR>
 
 " vim-plug
 if empty(glob('~/.vim/autoload/plug.vim'))
