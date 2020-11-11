@@ -57,7 +57,7 @@
     (setq org-capture-templates
         `(("c" "clock into miscellaneous task" entry
             (file+olp ,(concat org-directory "/work.org") "miscellaneous")
-                "* %?" :clock-in t)
+                "* %?" :clock-in t :jump-to-captured t)
           ("n" "note")
           ("nn" "quick note" entry
             (file+datetree "~/workspace/notebook/captains-log.org")
