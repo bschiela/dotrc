@@ -55,8 +55,8 @@
     (setq org-columns-default-format "%30ITEM %Effort{:} %CLOCKSUM")
     ;;; capture
     (setq org-capture-templates
-        '(("c" "clock into miscellaneous task" entry
-            (file+olp (concat org-directory "/work.org") "miscellaneous")
+        `(("c" "clock into miscellaneous task" entry
+            (file+olp ,(concat org-directory "/work.org") "miscellaneous")
                 "* %?" :clock-in t)
           ("n" "note")
           ("nn" "quick note" entry
