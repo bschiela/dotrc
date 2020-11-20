@@ -52,6 +52,7 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
   let g:UltiSnipsJumpBackwardTrigger  = '<s-tab>'
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
 Plug 'lervag/vimtex'
+  let g:tex_flavor = 'latex'
 Plug 'tpope/vim-surround'
 Plug 'ludovicchabant/vim-gutentags'
   let g:gutentags_cache_dir = expand('~/.cache/vim/ctags')
