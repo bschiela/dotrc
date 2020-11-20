@@ -53,4 +53,7 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
 Plug 'lervag/vimtex'
 Plug 'tpope/vim-surround'
+Plug 'ludovicchabant/vim-gutentags'
+  let g:gutentags_cache_dir = expand('~/.cache/vim/ctags')
+  set statusline+=%{gutentags#statusline()}
 call plug#end()
