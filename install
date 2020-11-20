@@ -3,9 +3,11 @@
 home_to_here=$(realpath $(dirname $BASH_SOURCE) --relative-to ~)
 
 # bash
-ln -s ~/$home_to_here/bashrc ~/.bashrc
 if [[ $OSTYPE == linux-gnu* ]]; then  # WSL, GNU
+  ln -s ~/$home_to_here/bashrc ~/.bashrc
   ln -s ~/$home_to_here/dir_colors ~/.dir_colors
+elif [[ $OSTYPE == darwin* ]]; then  # macOS
+  ln -s ~/$home_to_here/bashrc ~/.bash_profile
 fi
 ln -s ~/$home_to_here/inputrc ~/.inputrc
 
