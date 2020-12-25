@@ -35,6 +35,7 @@
         '((sequence "TODO(t)" "NEXT(n)" "BLOCKED(k@)" "|" "CANCELLED(c@)" "DONE(d)")))
     (setq org-tags-column -80)
     (add-to-list `org-export-backends `org)
+    (setq org-image-actual-width nil)
     ;;; logging
     (setq org-log-into-drawer t)
     (setq org-log-done t)
