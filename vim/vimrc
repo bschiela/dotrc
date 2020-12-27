@@ -57,4 +57,5 @@ Plug 'tpope/vim-surround'
 Plug 'ludovicchabant/vim-gutentags'
   let g:gutentags_cache_dir = expand('~/.cache/vim/ctags')
   set statusline+=%{gutentags#statusline()}
+  let g:gutentags_exclude_filetypes = ['tex']
 call plug#end()
