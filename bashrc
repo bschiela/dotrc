@@ -6,7 +6,9 @@ if [[ $OSTYPE == darwin* ]]; then  # macOS, BSD
 elif [[ $OSTYPE == linux-gnu* ]]; then # WSL, GNU
   alias ls="ls --color=auto"
   eval $(dircolors -b ~/.dir_colors)
-  export DISPLAY=:0.0  # forward GUIs to Xming on WSL
+  # forward GUIs to Xming on WSL
+  export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
+  export LIBGL_ALWAYS_INDIRECT=1
 fi
 
 PS1='[\!]\[\e[33;4m\]\u@\h\[\e[00m\]:\[\e[36m\]\w\[\e[00m\]$([ \j -ne 0 ] && echo \(\j\))\$ '
