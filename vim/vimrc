@@ -5,6 +5,10 @@ set backspace=indent,eol,start  " sensical backspaces
 set ruler
 set showcmd
 set background=dark
+if &term =~ '^xterm'
+  let &t_SI .= "\<Esc>[6 q" " solid | (insert)
+  let &t_EI .= "\<Esc>[2 q" " solid block (normal, visual, command)
+endif
 
 " searching
 set hlsearch
