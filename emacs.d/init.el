@@ -4,6 +4,7 @@
 (load custom-file)
 
 (setq-default fill-column 80)
+(setq-default default-input-method "TeX")
 
 ;;; open links in browser from WSL
 (let ((cmd-exe "/mnt/c/Windows/System32/cmd.exe")
