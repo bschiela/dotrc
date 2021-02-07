@@ -18,4 +18,5 @@ export HISTTIMEFORMAT="[%_m/%d %a %_I:%M:%S %p] "
 alias mv='mv -i'
 alias cp='cp -i'
 alias clear='clear -x'
+alias ll='ls -lh'
 
