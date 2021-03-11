@@ -1,0 +1,22 @@
+# matplotlib configuration file
+
+figure.autolayout   : True
+figure.figsize      : 6.5, 4.875  # 4/3 aspect ratio
+
+text.usetex         : True
+
+font.family         : serif
+font.serif          : Computer Modern
+font.size           : 11
+
+xtick.major.size    : 5
+ytick.major.size    : 5
+xtick.major.width   : 1.5
+ytick.major.width   : 1.5
+
+xtick.minor.visible : True
+ytick.minor.visible : True
+xtick.minor.size    : 3
+ytick.minor.size    : 3
+xtick.minor.width   : 1
+ytick.minor.width   : 1
