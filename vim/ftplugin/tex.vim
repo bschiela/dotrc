@@ -1,4 +1,8 @@
-let g:vimtex_view_method='mupdf'
+if g:uname == 'Darwin'
+  let g:vimtex_view_method='skim'
+elseif g:uname == 'Linux'
+  let g:vimtex_view_method='mupdf'
+endif
 let g:vimtex_quickfix_open_on_warning=0
 let g:vimtex_quickfix_autoclose_after_keystrokes=5
 let g:vimtex_compiler_latexmk = {

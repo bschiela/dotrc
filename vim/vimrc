@@ -1,6 +1,9 @@
 set nocompatible                " no vi
 set backspace=indent,eol,start  " sensical backspaces
 
+" for operating-system-specific functionality
+let g:uname = substitute(system('uname'), '\n', '', '')
+
 " appearance
 set ruler
 set showcmd
