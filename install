@@ -1,16 +1,19 @@
 #! /bin/bash
 
-home_to_here=$(realpath $(dirname $BASH_SOURCE) --relative-to ~)
-
-# bash
 if [[ $OSTYPE == linux-gnu* ]]; then  # WSL, GNU
+  home_to_here=$(realpath $(dirname $BASH_SOURCE) --relative-to ~)
   lndir_opts='-sT'
   ln -s ~/$home_to_here/bashrc ~/.bashrc
   ln -s ~/$home_to_here/dir_colors ~/.dir_colors
 elif [[ $OSTYPE == darwin* ]]; then  # macOS
+  home_to_here=$(cd "$(dirname "$0")"; pwd)
   lndir_opts='-s'
   ln -s ~/$home_to_here/bashrc ~/.bash_profile
+else
+  echo "Error: unrecognized operating system '$OSTYPE'" 1>&2
+  exit 1
 fi
+
 ln -s ~/$home_to_here/inputrc ~/.inputrc
 
 # vim
