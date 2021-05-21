@@ -62,4 +62,5 @@ Plug 'ludovicchabant/vim-gutentags'
   let g:gutentags_cache_dir = expand('~/.cache/vim/ctags')
   set statusline+=%{gutentags#statusline()}
   let g:gutentags_exclude_filetypes = ['tex']
+Plug 'ctrlpvim/ctrlp.vim'
 call plug#end()
