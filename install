@@ -4,22 +4,24 @@ home_to_here=$(realpath $(dirname $BASH_SOURCE) --relative-to ~)
 
 # bash
 if [[ $OSTYPE == linux-gnu* ]]; then  # WSL, GNU
+  lndir_opts='-sT'
   ln -s ~/$home_to_here/bashrc ~/.bashrc
   ln -s ~/$home_to_here/dir_colors ~/.dir_colors
 elif [[ $OSTYPE == darwin* ]]; then  # macOS
+  lndir_opts='-s'
   ln -s ~/$home_to_here/bashrc ~/.bash_profile
 fi
 ln -s ~/$home_to_here/inputrc ~/.inputrc
 
 # vim
-ln -sT ~/$home_to_here/vim   ~/.vim
+ln $lndir_opts ~/$home_to_here/vim   ~/.vim
 ln -s ~/$home_to_here/vim/vimrc ~/.vimrc
 
 # emacs
-ln -sT ~/$home_to_here/emacs.d ~/.emacs.d
+ln $lndir_opts ~/$home_to_here/emacs.d ~/.emacs.d
 
 # git
-ln -sT ~/$home_to_here/git ~/.git
+ln $lndir_opts ~/$home_to_here/git ~/.git
 ln -s ~/$home_to_here/git/gitconfig ~/.gitconfig
 ln -s ~/$home_to_here/git/hooks/pre-commit git/templateDir/hooks/pre-commit
 ln -s ~/$home_to_here/git/hooks/pre-push git/templateDir/hooks/pre-push
