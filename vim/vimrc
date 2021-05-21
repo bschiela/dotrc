@@ -32,6 +32,7 @@ map <Space> <Leader>
 
 " buffers
 nnoremap gb :ls<CR>:b<Space>
+set hidden
 
 " insert mode mappings
 inoremap <C-V>d <C-r>=strftime('%-m/%-d/%Y')<CR>
