@@ -5,3 +5,6 @@
 	helper = cache --timeout 3600
 [init]
 	templateDir = ~/.git/templateDir
+[merge]
+	tool = vimdiff
+	conflictStyle = diff3
