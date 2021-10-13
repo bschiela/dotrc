@@ -73,4 +73,5 @@ Plug 'preservim/tagbar'
   let g:tagbar_position = 'topleft vertical'
   let g:tagbar_sort = 0
   let g:tagbar_autofocus = 1
+Plug 'vim-airline/vim-airline'
 call plug#end()
