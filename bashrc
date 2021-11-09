@@ -21,4 +21,5 @@ alias cp='cp -i'
 alias clear='clear -x'
 alias ll='ls -lh'
 alias grep='grep --color=auto'
+alias emacs='emacs -nw'
 
