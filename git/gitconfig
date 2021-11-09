@@ -10,3 +10,5 @@
 	conflictStyle = diff3
 [alias]
 	co = checkout
+[pull]
+	rebase = true
