@@ -70,7 +70,10 @@ Plug 'ludovicchabant/vim-gutentags'
   let g:gutentags_cache_dir = expand('~/.cache/vim/ctags')
   set statusline+=%{gutentags#statusline()}
   let g:gutentags_exclude_filetypes = ['tex']
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+  nnoremap <Leader>p :GFiles<CR>
+  nnoremap gb :Buffers<CR>
 Plug 'preservim/tagbar'
   nnoremap <Leader>tt :TagbarToggle<CR>
   nnoremap <Leader>tp :TagbarTogglePause<CR>
