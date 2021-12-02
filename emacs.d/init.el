@@ -29,6 +29,7 @@
 (eval-when-compile (require 'use-package))
 
 ;;; packages
+(setq evil-want-C-i-jump nil)
 (use-package evil
     :ensure t
     :config (evil-mode t))
