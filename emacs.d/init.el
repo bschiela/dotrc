@@ -32,7 +32,15 @@
 (setq evil-want-C-i-jump nil)
 (use-package evil
     :ensure t
-    :config (evil-mode t))
+    :config (evil-mode t)
+    (define-key evil-motion-state-map (kbd "C-z") 'suspend-frame)
+    (define-key evil-motion-state-map (kbd "C-x C-z") 'evil-emacs-state)
+    (define-key evil-emacs-state-map (kbd "C-z") 'suspend-frame)
+    (define-key evil-emacs-state-map (kbd "C-x C-z") 'evil-exit-emacs-state)
+    (define-key evil-insert-state-map (kbd "C-z") (kbd "C-q C-z"))
+    (define-key evil-insert-state-map (kbd "C-x C-z") 'evil-emacs-state)
+    (define-key evil-replace-state-map (kbd "C-z") (kbd "C-q C-z"))
+)
 (use-package org
     :ensure t
     :config
