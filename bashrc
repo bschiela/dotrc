@@ -16,12 +16,14 @@ PS1='\[\e[33;4m\]\u@\h\[\e[00m\]:\[\e[36m\]\w\[\e[00m\]\[\e[32m\]$(__git_ps1)\[\
 export HISTTIMEFORMAT="[%_m/%d %a %_I:%M:%S %p] "
 export HISTCONTROL=ignorespace
 
+export PATH="~/bin:$PATH"
+
 alias mv='mv -i'
 alias cp='cp -i'
 alias clear='clear -x'
 alias ll='ls -lh'
 alias grep='grep --color=auto'
 alias emacs='emacs -nw'
+alias cat='bat'
 
-export PATH="~/bin:$PATH"
 
