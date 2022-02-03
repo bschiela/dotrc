@@ -26,4 +26,5 @@ alias grep='grep --color=auto'
 alias emacs='emacs -nw'
 alias cat='bat'
 
+export FZF_DEFAULT_OPTS='--bind alt-j:down,alt-k:up'
 
