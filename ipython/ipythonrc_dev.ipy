@@ -1,0 +1,7 @@
+# make dev profile: $ ipython profile create dev
+# symlink into ~/.ipython/profile_dev/startup/
+
+%load_ext autoreload
+%autoreload 2
+import numpy as np
+from matplotlib import pyplot as plt
