@@ -34,3 +34,6 @@ ln -s ~/$home_to_here/python/flake8 ~/.config/flake8
 ln -s ~/$home_to_here/python/matplotlibrc ~/.config/matplotlib/matplotlibrc
 ln -s ~/$home_to_here/python/condarc ~/.condarc
 ln -s ~/$home_to_here/python/ipythonrc.py ~/.ipython/profile_default/startup
+
+# tmux
+ln $lndir_opts ~/$home_to_here/tmux.conf   ~/.tmux.conf
