@@ -5,3 +5,4 @@
 %autoreload 2
 import numpy as np
 from matplotlib import pyplot as plt
+plt.ion()
