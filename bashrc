@@ -15,7 +15,7 @@ PS1='\[\e[33;4m\]\u@\h\[\e[00m\]:\[\e[36m\]\w\[\e[00m\]\[\e[32m\]$(__git_ps1)\[\
 
 export HISTTIMEFORMAT="[%_m/%d %a %_I:%M:%S %p] "
 export HISTCONTROL=ignorespace
-
+export EDITOR=vim
 export PATH="~/bin:$PATH"
 
 alias mv='mv -i'
