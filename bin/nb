@@ -14,6 +14,8 @@ FILE="tex/$FILE.tex"
 if [[ ! -f $FILE ]];
 then
   printf "%s does not exist\n" $FILE
+  echo "try one of the following:"
+  ls ./tex/*.tex
   exit 1;
 fi
 
