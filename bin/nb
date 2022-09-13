@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# go to research notebook
+cd ~/workspace/notebook/research/
+
+# determine which tex file to open
+if [[ $# -eq 0 ]];
+then FILE=stream;
+else FILE=$1;
+fi
+FILE="tex/$FILE.tex"
+
+# ensure file exists
+if [[ ! -f $FILE ]];
+then
+  printf "%s does not exist\n" $FILE
+  exit 1;
+fi
+
+# open file, ready for note-taking
+vim $FILE "+normal Go" +VimtexView "+startinsert" +VimtexCompile
