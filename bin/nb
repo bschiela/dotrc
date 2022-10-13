@@ -20,4 +20,4 @@ then
 fi
 
 # open file, ready for note-taking
-vim $FILE "+normal Go" +VimtexView "+startinsert" +VimtexCompile
+vim $FILE "+normal G" +VimtexView +VimtexCompile
