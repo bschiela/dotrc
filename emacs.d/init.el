@@ -77,9 +77,9 @@
         `(("c" "clock into miscellaneous task" entry
             (file+olp ,(concat org-directory "/work.org") "miscellaneous")
                 "* %?" :clock-in t :jump-to-captured t)
-          ("n" "note" entry
+          ("l" "captain's log" entry
             (file+datetree "~/workspace/notebook/log/captains-log.org")
-                "* %^{title} %^g\n%U\n\n%?")))
+                "* %^{title}\n%T%?")))
     ;;; refile
     (setq org-refile-targets '((org-agenda-files :maxlevel . 5)))
     (setq org-refile-use-outline-path 'file)
