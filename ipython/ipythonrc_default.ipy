@@ -1,6 +1,4 @@
 # symlink into ~/.ipython/profile_default/startup/
 import numpy as np
-import matplotlib
 from matplotlib import pyplot as plt
-matplotlib.use("TkAgg")
 plt.ion()
