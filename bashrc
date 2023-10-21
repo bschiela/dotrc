@@ -11,6 +11,11 @@ elif [[ $OSTYPE == linux-gnu* ]]; then # WSL, GNU
   export LIBGL_ALWAYS_INDIRECT=1
 fi
 
+export GIT_PS1_DESCRIBE_STYLE=branch
+export GIT_PS1_SHOWDIRTYSTATE=yes
+export GIT_PS1_SHOWSTASHSTATE=
+export GIT_PS1_SHOWUNTRACKEDFILES=yes
+export GIT_PS1_SHOWUPSTREAM=yes
 PS1='\[\e[33;4m\]\u@\h\[\e[00m\]:\[\e[36m\]\w\[\e[00m\]\[\e[32m\]$(__git_ps1)\[\e[00m\]\n[\!]$([ \j -ne 0 ] && echo \(\j\))\$ '
 
 export HISTTIMEFORMAT="[%_m/%d %a %_I:%M:%S %p] "
