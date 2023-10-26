@@ -1,5 +1,7 @@
 [[ $- != *i* ]] && return
 
+set -o vi
+
 if [[ $OSTYPE == darwin* ]]; then  # macOS, BSD
   export CLICOLOR=1
   export LSCOLORS=gxfxcxdxbxegedabagacad
