@@ -31,7 +31,7 @@ alias clear='clear -x'
 alias ll='ls -lh'
 alias grep='grep --color=auto'
 alias emacs='emacs -nw'
-alias cat='bat'
+alias cat='batcat'
 
 export FZF_DEFAULT_OPTS='--bind alt-j:down,alt-k:up'
 
