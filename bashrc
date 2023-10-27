@@ -29,7 +29,7 @@ alias mv='mv -i'
 alias cp='cp -i'
 alias clear='clear -x'
 alias ll='ls -lh'
-alias grep='grep --color=auto'
+alias grep='grep -n --color=auto'
 alias emacs='emacs -nw'
 alias cat='batcat'
 
