@@ -51,6 +51,9 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+" number formats
+set nrformats-=octal
+
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-plug'
 Plug 'jeffkreeftmeijer/vim-numbertoggle' | set number relativenumber
