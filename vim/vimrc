@@ -85,4 +85,5 @@ Plug 'preservim/tagbar'
   let g:tagbar_autofocus = 1
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
+Plug 'chrisbra/csv.vim',  { 'for' : 'csv' }
 call plug#end()
