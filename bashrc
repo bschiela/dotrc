@@ -32,6 +32,7 @@ alias ll='ls -lh'
 alias grep='grep -n --color=auto'
 alias emacs='emacs -nw'
 alias cat='batcat'
+alias tail='tail ---disable-inotify'  # WSL
 
 export FZF_DEFAULT_OPTS='--bind alt-j:down,alt-k:up'
 
