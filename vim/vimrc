@@ -66,6 +66,14 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
   let g:UltiSnipsJumpForwardTrigger   = '<tab>'
   let g:UltiSnipsJumpBackwardTrigger  = '<s-tab>'
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
+Plug 'dense-analysis/ale'
+  let g:ale_linters = {'python': ['ruff', 'jedils']}
+  let g:ale_fixers = {'python' : ['autoflake', 'isort', 'black']}
+  let g:ale_python_autoflake_options='--remove-all-unused-imports --ignore-init-module-imports --remove-unused-variables'
+  let g:ale_python_isort_options='--profile black'
+  nmap <Leader>f <Plug>(ale_fix)
+  nmap <silent> <C-j> <Plug>(ale_next_wrap)
+  nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 Plug 'lervag/vimtex'
   let g:tex_flavor = 'latex'
 Plug 'tpope/vim-surround'
