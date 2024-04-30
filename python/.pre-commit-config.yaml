@@ -1,21 +1,23 @@
 # example config for a python project
 default_stages: [commit]
 repos:
-  - repo: ~/repos/dotrc
-    rev: master
+  - repo: https://github.com/bschiela/githooks
+    rev: 19b1347
     hooks:
       - id: do-not-commit
-  - repo: https://github.com/myint/autoflake
-    rev: b330072a26
+      - id: python-unittest
+        stages: [push]
+  - repo: https://github.com/PyCQA/autoflake
+    rev: v2.1.1
     hooks:
       - id: autoflake
         args: [-i, --remove-all-unused-imports, --ignore-init-module-imports]
-  - repo: https://github.com/timothycrosley/isort
-    rev: 5.1.4
+  - repo: https://github.com/PyCQA/isort
+    rev: 5.12.0
     hooks:
       - id: isort
   - repo: https://github.com/psf/black
-    rev: 19.10b0
+    rev: 23.3.0
     hooks:
       - id: black
         language_version: python3
