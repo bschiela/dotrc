@@ -27,6 +27,14 @@ snippet fig "Figures" b
 \end{figure}
 endsnippet
 
+snippet sec "Sections" b
+\section{%
+	\label{sec:${2:${1/(\w*)(\s)?(\w*)?/\L$1(?2:-)$3\E/g}}}%
+	$1
+}
+$0
+endsnippet
+
 snippet "([Ii]\.e\.|[Ee]\.g\.|[Cc]f\.|[Nn]\.b\.|vs\.|[Aa]\.k\.a\.|[Ee]tc\.|s\.t\.|[Ww]\.r\.t\.|[AaDd]\.[Cc]\.) " "Post-abbreviation space" wrA
 `!p snip.rv = match[1]`\ $0
 endsnippet
