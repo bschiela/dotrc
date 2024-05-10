@@ -20,8 +20,10 @@ snippet fig "Figures" b
 \begin{figure}[${2:htbp}]
 	\centering
 	\includegraphics[width=${3:0.8}\linewidth]{${4:file.ext}}
-	\caption{$0}%
-	\label{fig:${4/(\w+)\.\w+/$1/}}
+	\caption[${6:title}]{%
+	    $0
+	}%
+	\label{fig:${5:${4/(\w+)\.\w*/$1/}}}
 \end{figure}
 endsnippet
 
