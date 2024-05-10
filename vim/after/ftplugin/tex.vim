@@ -6,3 +6,5 @@ setlocal spell spelllang=en_us
 highlight clear SpellLocal
 
 inoremap \[ \[\]<left><left>
+
+let g:ale_tex_chktex_options = '-I -n8'
