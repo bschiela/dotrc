@@ -7,4 +7,4 @@ highlight clear SpellLocal
 
 inoremap \[ \[\]<left><left>
 
-let g:ale_tex_chktex_options = '-I -n8 -n36'
+let g:ale_tex_chktex_options = '-I -n8 -n36 -n3'
