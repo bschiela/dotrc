@@ -35,6 +35,14 @@ snippet "(s{0,2})sec" "Sections" br
 $0
 endsnippet
 
+snippet fm "Footnotes" i
+\footnotemark{}
+\footnotetext{%
+	$1
+}
+$0
+endsnippet
+
 snippet "([Ii]\.e\.|[Ee]\.g\.|[Cc]f\.|[Nn]\.b\.|vs\.|[Aa]\.k\.a\.|[Ee]tc\.|s\.t\.|[Ww]\.r\.t\.|[AaDd]\.[Cc]\.) " "Post-abbreviation space" wrA
 `!p snip.rv = match[1]`\ $0
 endsnippet
