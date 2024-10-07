@@ -12,6 +12,8 @@ if &term =~ '^xterm'
   let &t_SI .= "\<Esc>[6 q" " solid | (insert)
   let &t_EI .= "\<Esc>[2 q" " solid block (normal, visual, command)
 endif
+let &t_EI = "\e[2 q"  " normal mode curosr: █
+let &t_SI = "\e[6 q"  " insert mode cursor: |
 
 " searching
 set hlsearch
