@@ -1,4 +1,8 @@
 # symlink into ~/.ipython/profile_default/startup/
+
 import numpy as np
+import pandas as pd
 from matplotlib import pyplot as plt
+from scipy import constants as c
+
 plt.ion()
