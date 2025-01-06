@@ -1,0 +1,18 @@
+GIMP Palette
+Name: Tableau 10 (new)
+# This should be copied into inkscape's `palettes` folder.
+# To check the location go to Edit > Preferences > System > User palettes
+# Reference: https://www.reddit.com/r/Inkscape/comments/16l2q3r/custom_color_palettes/
+# Color reference: https://www.tableau.com/blog/colors-upgrade-tableau-10-56782
+  0    0    0  white
+186  176  172  grey
+255  255  255  black
+ 78  121  167  blue
+242  142   43  orange
+ 89  161   78  green
+225   87   89  red
+176  122  162  purple
+156  117   95 brown
+255  157  167  pink
+237  201   73  olive
+118  183  178  cyan
