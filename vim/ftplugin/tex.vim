@@ -4,7 +4,8 @@ elseif g:uname == 'Linux'
   let g:vimtex_view_method='mupdf'
 endif
 let g:vimtex_quickfix_open_on_warning=0
-let g:vimtex_quickfix_autoclose_after_keystrokes=5
+"let g:vimtex_quickfix_autojump=1
+let g:vimtex_quickfix_autoclose_after_keystrokes=0
 let g:vimtex_compiler_latexmk = {
 \ 'options' : [
 \   '-pdf',
