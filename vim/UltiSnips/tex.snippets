@@ -27,6 +27,23 @@ snippet fig "Figures" b
 \end{figure}
 endsnippet
 
+snippet table "Tables" b
+\begin{table}[${2:tbp}]
+	\centering
+	\begin{tabular}{${3:c}}
+		\toprule
+		$0 ${3/\w/& /g}\\\\
+		\midrule
+		 ${3/\w/& /g}\\\\
+		\bottomrule
+	\end{tabular}
+	\caption[${4:title}]{%
+		\textbf{${5:$4}.}
+	}%
+	\label{tab:${6:label}}
+\end{table}
+endsnippet
+
 snippet "(s{0,2})sec" "Sections" br
 \\`!p snip.rv = match.group(1).replace("s", "sub")`section{%
 	\label{sec:${2:${1/(\w*)(\s)?(\w*)?/\L$1(?2:-)$3\E/g}}}%
