@@ -1,23 +1,24 @@
 #!/bin/bash
 
-# go to research notebook
-cd ~/workspace/notebook/research/
+# go to current research notebook
+cd ~/workspace/notebook
 
 # determine which tex file to open
 if [[ $# -eq 0 ]];
-then FILE=stream;
-else FILE=$1;
+then file=default;
+else file=$1;
 fi
-FILE="tex/$FILE.tex"
+file="$file.tex"
+path=$(find . -name "$file")
 
 # ensure file exists
-if [[ ! -f $FILE ]];
+if [[ ! -f $path ]];
 then
-  printf "%s does not exist\n" $FILE
-  echo "try one of the following:"
-  ls ./tex/*.tex
+  printf "%s does not exist. try:\n" $file
+  find . -type f -name "*.tex"
   exit 1;
 fi
 
 # open file, ready for note-taking
-vim $FILE "+normal G" +VimtexView +VimtexCompile
+vim $path "+normal G" +VimtexView
+#+VimtexCompile
