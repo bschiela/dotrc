@@ -79,6 +79,7 @@ Plug 'dense-analysis/ale'
   let g:ale_python_isort_options='--profile black'
   let g:ale_python_black_options='--preview'
   let g:ale_echo_msg_format='[%linter%%:code%] %s'
+  let g:ale_pattern_options={'.tex$': {'ale_enabled': 0}}
   nmap <Leader>f <Plug>(ale_fix)
   nmap <silent> <C-j> <Plug>(ale_next_wrap)
   nmap <silent> <C-k> <Plug>(ale_previous_wrap)
