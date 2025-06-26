@@ -56,10 +56,10 @@ endsnippet
 snippet acr "Glossary acronym" b
 \newglossaryentry{${1:key}}{%
     long={${2:long form of acronym}},
-    short={${1/\w*/\U$0\E/}},
-    first={\glsentrylong{$1} (\glsentryshort{$1})},
-    name={\glsentrylong{$1} (\glsentryshort{$1})},
-    text={\glsentryshort{$1}},
+    short={${3:${1/\w*/\U$0\E/}}},
+    text={$3},
+    first={$2 ($3)},
+    name={$3 ($2)},
     description={$0},
 }
 endsnippet
