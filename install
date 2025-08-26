@@ -16,6 +16,9 @@ fi
 
 ln -s ~/$home_to_here/inputrc ~/.inputrc
 
+# zsh
+ln -s ~/$home_to_here/zsh/zprofile ~/.zprofile
+
 # vim
 ln $lndir_opts ~/$home_to_here/vim   ~/.vim
 ln -s ~/$home_to_here/vim/vimrc ~/.vimrc
