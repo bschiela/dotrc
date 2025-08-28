@@ -3,7 +3,7 @@
 (setq custom-file "~/.emacs.d/.emacs-custom.el")
 (when (file-exists-p custom-file) (load custom-file))
 
-(setq-default fill-column 80)
+(setq-default fill-column 88)
 (setq-default default-input-method "TeX")
 
 ;;; open links in browser from WSL
