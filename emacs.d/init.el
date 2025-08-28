@@ -45,7 +45,7 @@
     :ensure t
     :config
     ;; global
-    (setq org-directory "~/winhome/Dropbox/orgzly")
+    (setq org-directory "~/workspace/orgmode")
     (global-set-key (kbd "C-c a") 'org-agenda)
     (global-set-key (kbd "C-c c") 'org-capture)
     (global-set-key (kbd "C-c l") 'org-store-link)
@@ -78,7 +78,7 @@
             (file+olp ,(concat org-directory "/work.org") "miscellaneous")
                 "* %?" :clock-in t :jump-to-captured t)
           ("l" "captain's log" entry
-            (file+datetree "~/workspace/notebook/log/captains-log.org")
+            (file+datetree ,(concat org-directory "/captains-log.org"))
                 "* %^{title}\n%T%?")))
     ;;; refile
     (setq org-refile-targets '((org-agenda-files :maxlevel . 5)))
