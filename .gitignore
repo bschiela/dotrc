@@ -7,9 +7,10 @@ plugged/
 
 # emacs
 *~
-elpa/
 .emacs-custom.el
 .last-package-update-day
-url/
-org-clock-save.el
 bookmarks
+elpa/
+org-clock-save.el
+org-persist/
+url/
