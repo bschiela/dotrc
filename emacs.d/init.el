@@ -74,12 +74,15 @@
     (setq org-columns-default-format "%30ITEM %Effort{:} %CLOCKSUM")
     ;;; capture
     (setq org-capture-templates
-        `(("c" "clock into miscellaneous task" entry
-            (file+olp ,(concat org-directory "/work.org") "miscellaneous")
-                "* %?" :clock-in t :jump-to-captured t)
-          ("l" "captain's log" entry
-            (file+datetree ,(concat org-directory "/captains-log.org"))
-                "* %^{title}\n%T%?")))
+        `(("l" "captain's log" entry
+            (file+datetree ,(concat org-directory "/log.org"))
+                "* %^{title} %^G\n%T%?")
+	  ("t" "task to do" entry
+            (file+olp ,(concat org-directory "/main.org") "unfiled tasks")
+                "* TODO %^{task} %^G\nCREATED: %U%?" :prepend t)
+	  ("c" "clock into miscellaneous task" entry
+            (file+olp ,(concat org-directory "/main.org") "miscellaneous")
+                "* %?" :clock-in t :jump-to-captured t)))
     ;;; refile
     (setq org-refile-targets '((org-agenda-files :maxlevel . 5)))
     (setq org-refile-use-outline-path 'file)
