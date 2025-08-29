@@ -7,7 +7,6 @@ plugged/
 
 # emacs
 *~
-.emacs-custom.el
 .last-package-update-day
 bookmarks
 elpa/
