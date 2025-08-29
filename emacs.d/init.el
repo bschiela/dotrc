@@ -49,8 +49,6 @@
     (global-set-key (kbd "C-c a") 'org-agenda)
     (global-set-key (kbd "C-c c") 'org-capture)
     (global-set-key (kbd "C-c l") 'org-store-link)
-    (setq org-todo-keywords
-        '((sequence "TODO(t)" "NEXT(n)" "BLOCKED(k@)" "|" "CANCELLED(c@)" "DONE(d)")))
     (setq org-tags-column -80)
     (add-to-list `org-export-backends `org)
     (setq org-image-actual-width nil)

@@ -9,6 +9,8 @@
  '(calendar-longitude -74.006)
  '(org-agenda-files
    '("~/workspace/orgmode/main.org" "~/workspace/orgmode/log.org"))
+ '(org-todo-keywords
+   '((sequence "TODO(t)" "NEXT(n)" "WIP(w!)" "BLOCKED(b@)" "|" "DONE(d!)" "CANCELLED(c@)")))
  '(package-selected-packages nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
