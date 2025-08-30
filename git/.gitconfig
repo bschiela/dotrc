@@ -2,7 +2,7 @@
 	autocrlf = input
 	editor = vim
 [init]
-	templateDir = ~/.git/templateDir
+	templateDir = ~/.git-templates
 [merge]
 	tool = vimdiff
 	conflictStyle = diff3
