@@ -1,8 +1,6 @@
 [core]
 	autocrlf = input
 	editor = vim
-[credential]
-	helper = cache --timeout 3600
 [init]
 	templateDir = ~/.git/templateDir
 [merge]
