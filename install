@@ -2,42 +2,30 @@
 
 if [[ $OSTYPE == linux-gnu* ]]; then  # WSL, GNU
   home_to_here=$(realpath $(dirname $BASH_SOURCE) --relative-to ~)
-  lndir_opts='-sT'
-  ln -s ~/$home_to_here/bashrc ~/.bashrc
   ln -s ~/$home_to_here/dir_colors ~/.dir_colors
 elif [[ $OSTYPE == darwin* ]]; then  # macOS
   home_to_here=$(cd "$(dirname "$0")"; pwd)
-  lndir_opts='-s'
-  ln -s ~/$home_to_here/bashrc ~/.bash_profile
 else
   echo "Error: unrecognized operating system '$OSTYPE'" 1>&2
   exit 1
 fi
 
-ln -s ~/$home_to_here/inputrc ~/.inputrc
-
-# zsh
-ln -s ~/$home_to_here/zsh/zprofile ~/.zprofile
-ln -s ~/$home_to_here/zsh/zshrc ~/.zshrc
-
-# vim
-ln $lndir_opts ~/$home_to_here/vim   ~/.vim
-ln -s ~/$home_to_here/vim/vimrc ~/.vimrc
-
-# emacs
-ln $lndir_opts ~/$home_to_here/emacs.d ~/.emacs.d
-
-# git
-ln $lndir_opts ~/$home_to_here/git ~/.git
-ln -s ~/$home_to_here/git/gitconfig ~/.gitconfig
-ln -s ~/$home_to_here/git/hooks/pre-commit git/templateDir/hooks/pre-commit
-ln -s ~/$home_to_here/git/hooks/pre-push git/templateDir/hooks/pre-push
+if command -v stow >/dev/null 2>&1; then
+  pushd $home_to_here
+  stow readline -t ~
+  stow bash -t ~
+  stow zsh -t ~
+  stow tmux -t ~
+  stow vim -t ~
+  stow emacs -t ~
+  stow git -t ~
+  popd
+else
+  echo stow not found, skipping several configs...
+fi
 
 # python
 ln -s ~/$home_to_here/python/flake8 ~/.config/flake8
 ln -s ~/$home_to_here/python/matplotlibrc ~/.config/matplotlib/matplotlibrc
 ln -s ~/$home_to_here/python/condarc ~/.condarc
 ln -s ~/$home_to_here/python/ipythonrc.py ~/.ipython/profile_default/startup
-
-# tmux
-ln $lndir_opts ~/$home_to_here/tmux.conf   ~/.tmux.conf
