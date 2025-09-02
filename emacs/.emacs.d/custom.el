@@ -7,6 +7,7 @@
  '(calendar-latitude 40.7128)
  '(calendar-location-name "New York City")
  '(calendar-longitude -74.006)
+ '(fill-column 88)
  '(org-agenda-files
    '("~/workspace/orgmode/main.org" "~/workspace/orgmode/log.org"))
  '(org-todo-keywords
