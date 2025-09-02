@@ -115,6 +115,9 @@ export EDITOR='vim'
 # End of Oh My Zsh template #
 #############################
 
+# vim-like keybindings
+bindkey -v
+
 # zsh-completions
 if type brew &>/dev/null; then
     FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
