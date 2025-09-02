@@ -4,6 +4,7 @@
 (when (file-exists-p custom-file) (load custom-file))
 
 (setq-default default-input-method "TeX")
+(add-hook 'text-mode-hook 'turn-on-auto-fill)
 
 ;;; open links in browser from WSL
 (let ((cmd-exe "/mnt/c/Windows/System32/cmd.exe")
