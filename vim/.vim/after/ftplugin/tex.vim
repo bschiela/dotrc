@@ -10,3 +10,4 @@ inoremap \[ \[\]<left><left>
 let g:ale_tex_chktex_options = '-I -n8 -n36 -n3 -n1'
 
 setlocal textwidth=88
+setlocal nowrap
