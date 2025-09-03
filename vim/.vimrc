@@ -46,15 +46,15 @@ set hidden
 " insert mode mappings
 inoremap <C-V>d <C-r>=strftime('%-m/%-d/%Y')<CR>
 
+" number formats
+set nrformats-=octal
+
 " vim-plug
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
-
-" number formats
-set nrformats-=octal
 
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-plug'
