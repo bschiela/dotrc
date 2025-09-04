@@ -47,9 +47,6 @@ zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
 
-# Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
-
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
 # e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
@@ -117,6 +114,10 @@ export EDITOR='vim'
 
 # vim-like keybindings
 bindkey -v
+
+ENABLE_CORRECTION="true"  # typo correction
+setopt correct            # for commands
+unsetopt correct_all      # not arguments
 
 # zsh-completions
 if type brew &>/dev/null; then
