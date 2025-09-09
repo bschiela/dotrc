@@ -11,6 +11,7 @@
  '(fill-column 88)
  '(org-agenda-files
    '("~/workspace/orgmode/main.org" "~/workspace/orgmode/log.org"))
+ '(org-id-link-to-org-use-id 'create-if-interactive)
  '(org-todo-keywords
    '((sequence "TODO(t)" "NEXT(n)" "WIP(w!)" "BLOCKED(b@)" "|" "DONE(d!)" "CANCELLED(c@)")))
  '(package-selected-packages nil))
