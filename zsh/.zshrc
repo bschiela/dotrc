@@ -1,5 +1,10 @@
 # zsh interactive shell configuration
 
+# short-circuit if shell isn't running interactively
+if [[ "$-" != *i* ]]; then
+    return
+fi
+
 ######################
 # Oh My Zsh template #
 ######################
