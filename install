@@ -21,6 +21,7 @@ if command -v stow >/dev/null 2>&1; then
   stow git -t ~
   stow bin -t ~
   stow conda -t ~
+  stow ack -t ~
   popd
 else
   echo stow not found, skipping several configs...
