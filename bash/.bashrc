@@ -41,3 +41,5 @@ export FZF_DEFAULT_OPTS='--bind alt-j:down,alt-k:up'
 eval `keychain --agents ssh --eval ~/.ssh/git_ed25519`
 
 #arxiv_checker.py &
+
+source ~/.bashrc.local
