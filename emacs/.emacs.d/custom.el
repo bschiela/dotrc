@@ -11,6 +11,9 @@
  '(fill-column 88)
  '(org-agenda-files
    '("~/workspace/orgmode/main.org" "~/workspace/orgmode/log.org"))
+ '(org-file-apps
+   '(("\\.pptx\\'" . "open %s") (auto-mode . emacs) (directory . emacs)
+     ("\\.mm\\'" . default) ("\\.x?html?\\'" . default) ("\\.pdf\\'" . default)))
  '(org-id-link-to-org-use-id 'create-if-interactive)
  '(org-todo-keywords
    '((sequence "TODO(t)" "NEXT(n)" "WIP(w!)" "BLOCKED(b@)" "|" "DONE(d!)" "CANCELLED(c@)")))
