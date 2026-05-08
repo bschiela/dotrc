@@ -1,0 +1,28 @@
+# 8.5x11" letter paper, 1" margins, full-width plot
+figure.constrained_layout.use : True
+figure.figsize      : 6.5, 4.01722092687
+savefig.transparent : True
+
+# fonts
+pdf.fonttype        : 42
+font.size           : 12
+axes.labelsize      : 12
+xtick.labelsize     : 11
+ytick.labelsize     : 11
+
+# linewidths
+lines.linewidth     : 2
+axes.linewidth      : 1
+grid.linewidth      : 0.5
+xtick.major.width   : 1
+ytick.major.width   : 1
+xtick.minor.width   : 0.5
+ytick.minor.width   : 0.5
+
+# ticks
+xtick.direction     : in
+ytick.direction     : in
+xtick.major.size    : 8
+ytick.major.size    : 8
+xtick.minor.size    : 4
+ytick.minor.size    : 4
