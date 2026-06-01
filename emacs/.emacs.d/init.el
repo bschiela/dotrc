@@ -30,6 +30,7 @@
 
 ;;; packages
 (setq evil-want-C-i-jump nil)
+(setq evil-search-module 'evil-search)  ;; vim-like /search behavior instead of emacs isearch
 (use-package evil
     :ensure t
     :config (evil-mode t)
