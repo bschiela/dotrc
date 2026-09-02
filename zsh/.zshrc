@@ -152,9 +152,10 @@ source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 # environment variables
 export MPLCONFIGDIR=~/.config/matplotlib  # follow linux/xdg
 
-if [ -f ~/.zshrc.local ]; then
-    source ~/.zshrc.local
-fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+if [ -f ~/.zshrc.local ]; then
+    source ~/.zshrc.local
+fi
