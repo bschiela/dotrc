@@ -119,7 +119,6 @@ export EDITOR='vim'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias cat=bat
 
 #############################
 # End of Oh My Zsh template #
@@ -151,6 +150,11 @@ source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 # environment variables
 export MPLCONFIGDIR=~/.config/matplotlib  # follow linux/xdg
+
+# aliases
+alias cp='cp -i'
+alias mv='mv -i'
+alias cat=bat
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
