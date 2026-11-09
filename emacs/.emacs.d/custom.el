@@ -11,6 +11,7 @@
  '(fill-column 88)
  '(org-agenda-files
    '("~/workspace/orgmode/main.org" "~/workspace/orgmode/log.org"))
+ '(org-checkbox-hierarchical-statistics nil)
  '(org-file-apps
    '(("\\.pptx\\'" . "open %s") (auto-mode . emacs) (directory . emacs)
      ("\\.mm\\'" . default) ("\\.x?html?\\'" . default) ("\\.pdf\\'" . default)))
