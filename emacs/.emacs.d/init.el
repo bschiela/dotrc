@@ -15,11 +15,12 @@
             browse-url-browser-function 'browse-url-generic)))
 
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (add-to-list 'package-archives
-             '("melpa-stable" . "http://stable.melpa.org/packages/")
+             '("melpa-stable" . "https://stable.melpa.org/packages/")
 )
 (setq package-enable-at-startup nil)
+(setq package-install-upgrade-built-in t)
 (package-initialize)
 
 ;;; use-package
@@ -100,3 +101,34 @@
     (add-hook 'evil-org-mode-hook (lambda () (evil-org-set-key-theme)))
     (require 'evil-org-agenda)
     (evil-org-agenda-set-keys))
+(use-package org-node
+  :ensure t
+  :after org
+  :config
+  ;; Start background in-memory indexing and auto-update :BACKLINKS: drawers
+  (org-node-cache-mode 1)
+
+  ;; Create & save non-existent nodes silently in the background
+  (advice-add 'org-node-new-file :around
+              (lambda (fn &rest args)
+                (save-window-excursion
+		  (apply fn args)
+		  (save-buffer))))
+
+  ;; Standard community keybindings under C-c n ("notes")
+  (global-set-key (kbd "C-c n f") 'org-node-find)
+  (global-set-key (kbd "C-c n i") 'org-node-insert-link)
+  (global-set-key (kbd "C-c n b") 'org-node-context-dwim)
+  (global-set-key (kbd "C-c n n") 'org-node-nodeify-entry)
+  (global-set-key (kbd "C-c n r") 'org-node-refile))
+
+;; allow typing spaces when inserting links to nodes
+(define-key minibuffer-local-completion-map (kbd "SPC") nil)
+(define-key minibuffer-local-must-match-map (kbd "SPC") nil)
+;; prevent fido-vertical-mode from autoselecting first tag in capture template
+(define-key icomplete-fido-mode-map (kbd "RET")
+  (lambda ()
+    (interactive)
+    (if (string-empty-p (minibuffer-contents))
+        (exit-minibuffer)
+      (icomplete-fido-ret))))

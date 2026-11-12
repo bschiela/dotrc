@@ -8,6 +8,7 @@
  '(calendar-location-name "New York City")
  '(calendar-longitude -74.006)
  '(evil-undo-system 'undo-redo)
+ '(fido-vertical-mode t)
  '(fill-column 88)
  '(org-agenda-files
    '("~/workspace/orgmode/main.org" "~/workspace/orgmode/log.org"))
@@ -16,9 +17,13 @@
    '(("\\.pptx\\'" . "open %s") (auto-mode . emacs) (directory . emacs)
      ("\\.mm\\'" . default) ("\\.x?html?\\'" . default) ("\\.pdf\\'" . default)))
  '(org-id-link-to-org-use-id 'create-if-interactive)
+ '(org-mem-updater-mode t)
+ '(org-mem-watch-dirs '("~/workspace/orgmode"))
+ '(org-node-creation-fn 'org-node-new-file)
+ '(org-node-file-directory-ask "~/workspace/orgmode/nodes")
  '(org-todo-keywords
    '((sequence "TODO(t)" "NEXT(n)" "WIP(w!)" "BLOCKED(b@)" "|" "DONE(d!)" "CANCELLED(c@)")))
- '(package-selected-packages nil))
+ '(package-selected-packages '(evil-org org-node powerline transient)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
