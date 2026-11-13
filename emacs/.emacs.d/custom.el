@@ -23,7 +23,7 @@
  '(org-node-file-directory-ask "~/workspace/orgmode/nodes")
  '(org-todo-keywords
    '((sequence "TODO(t)" "NEXT(n)" "WIP(w!)" "BLOCKED(b@)" "|" "DONE(d!)" "CANCELLED(c@)")))
- '(package-selected-packages '(evil-org org-node powerline transient)))
+ '(package-selected-packages nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

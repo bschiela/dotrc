@@ -30,6 +30,12 @@
 (eval-when-compile (require 'use-package))
 
 ;;; packages
+(use-package
+ elisp-autofmt
+ :ensure t
+ :commands (elisp-autofmt-mode elisp-autofmt-buffer elisp-autofmt-region)
+ :hook (emacs-lisp-mode . elisp-autofmt-mode)
+ :custom (elisp-autofmt-on-save-p 'always))
 (setq evil-want-C-i-jump nil)
 (setq evil-search-module 'evil-search)  ;; vim-like /search behavior instead of emacs isearch
 (use-package evil
