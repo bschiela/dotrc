@@ -1,0 +1,84 @@
+# Style for 2D pcolormesh plots
+
+# Figure settings
+figure.figsize      : 6, 6
+figure.dpi          : 100  # Screen display resolution
+figure.constrained_layout.use : True
+figure.constrained_layout.h_pad : 0.04167
+figure.constrained_layout.w_pad : 0.04167
+
+# Save settings
+savefig.dpi         : 300  # High resolution for saved files
+savefig.format      : svg
+savefig.transparent : True
+
+# Axes settings
+axes.linewidth      : 1.0
+axes.grid           : False
+axes.axisbelow      : False
+axes.labelsize      : 14
+axes.labelweight    : normal
+axes.labelpad       : 4.0
+axes.titlesize      : 16
+axes.titleweight    : bold
+axes.titlepad       : 6.0
+
+# Font settings
+font.family         : sans-serif
+font.sans-serif     : DejaVu Sans, Arial, Helvetica, sans-serif
+font.size           : 12
+pdf.fonttype        : 42
+ps.fonttype         : 42
+
+# Tick settings
+xtick.top           : True
+xtick.bottom        : True
+xtick.direction     : in
+xtick.major.size    : 6
+xtick.major.width   : 1.0
+xtick.minor.size    : 4
+xtick.minor.width   : 0.8
+xtick.minor.visible : False
+xtick.labelsize     : 12
+xtick.color         : black
+
+ytick.left          : True
+ytick.right         : True
+ytick.direction     : in
+ytick.major.size    : 6
+ytick.major.width   : 1.0
+ytick.minor.size    : 4
+ytick.minor.width   : 0.8
+ytick.minor.visible : False
+ytick.labelsize     : 12
+ytick.color         : black
+
+# Grid settings (disabled by default for pcolormesh)
+grid.color          : gray
+grid.linestyle      : --
+grid.linewidth      : 0.5
+grid.alpha          : 0.3
+
+# Image settings for pcolormesh
+# Note: Rasterization cannot be set globally; use rasterized=True in pcolormesh() calls to keep SVGs small
+image.cmap          : viridis
+image.interpolation : nearest
+image.origin        : lower
+
+# Legend settings
+legend.frameon      : True
+legend.framealpha   : 0.8
+legend.fancybox     : True
+legend.fontsize     : 11
+legend.loc          : best
+
+# Line settings (for overlays like axvline)
+lines.linewidth     : 1.5
+lines.markersize    : 6
+lines.markeredgewidth : 1.0
+
+# Patch settings
+patch.linewidth     : 1.0
+patch.facecolor     : blue
+patch.edgecolor     : black
+patch.antialiased   : True
