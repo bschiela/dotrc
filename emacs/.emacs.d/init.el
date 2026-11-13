@@ -1,7 +1,8 @@
 (setq inhibit-startup-screen t)
 
 (setq custom-file "~/.emacs.d/custom.el")
-(when (file-exists-p custom-file) (load custom-file))
+(when (file-exists-p custom-file)
+  (load custom-file))
 
 (setq-default default-input-method "TeX")
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
@@ -10,15 +11,14 @@
 (let ((cmd-exe "/mnt/c/Windows/System32/cmd.exe")
       (cmd-args '("/c" "start")))
   (when (file-exists-p cmd-exe)
-    (setq browse-url-generic-program  cmd-exe
-	  browse-url-generic-args     cmd-args
-	  browse-url-browser-function 'browse-url-generic)))
+    (setq
+     browse-url-generic-program cmd-exe
+     browse-url-generic-args cmd-args
+     browse-url-browser-function 'browse-url-generic)))
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
-(add-to-list 'package-archives
-	     '("melpa-stable" . "https://stable.melpa.org/packages/")
-	     )
+(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/"))
 (setq package-enable-at-startup nil)
 (setq package-install-upgrade-built-in t)
 (package-initialize)
@@ -27,7 +27,8 @@
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
-(eval-when-compile (require 'use-package))
+(eval-when-compile
+  (require 'use-package))
 
 ;;; packages
 (use-package
@@ -37,104 +38,117 @@
  :hook (emacs-lisp-mode . elisp-autofmt-mode)
  :custom (elisp-autofmt-on-save-p 'always))
 (setq evil-want-C-i-jump nil)
-(setq evil-search-module 'evil-search)  ;; vim-like /search behavior instead of emacs isearch
-(use-package evil
-  :ensure t
-  :config (evil-mode t)
-  (define-key evil-motion-state-map (kbd "C-z") 'suspend-frame)
-  (define-key evil-motion-state-map (kbd "C-x C-z") 'evil-emacs-state)
-  (define-key evil-emacs-state-map (kbd "C-z") 'suspend-frame)
-  (define-key evil-emacs-state-map (kbd "C-x C-z") 'evil-exit-emacs-state)
-  (define-key evil-insert-state-map (kbd "C-z") (kbd "C-q C-z"))
-  (define-key evil-insert-state-map (kbd "C-x C-z") 'evil-emacs-state)
-  (define-key evil-replace-state-map (kbd "C-z") (kbd "C-q C-z"))
-  )
-(use-package org
-  :ensure t
-  :config
-  ;; global
-  (setq org-directory "~/workspace/orgmode")
-  (global-set-key (kbd "C-c a") 'org-agenda)
-  (global-set-key (kbd "C-c c") 'org-capture)
-  (global-set-key (kbd "C-c l") 'org-store-link)
-  (setq org-tags-column -80)
-  (add-to-list `org-export-backends `org)
-  (setq org-image-actual-width nil)
-    ;;; logging
-  (setq org-log-into-drawer t)
-  (setq org-log-done t)
-  (setq org-log-note-clock-out t)
-    ;;; clocking
-  (org-clock-persistence-insinuate)
-  (setq org-clock-persist t)
-  (setq org-clock-history-length 10)
-  (setq org-clock-into-drawer t)
-  (setq org-clock-out-when-done t)
-  (setq org-clock-out-remove-zero-time-clocks t)
-    ;;; agenda
-  (setq org-agenda-span 'day)
-  (setq org-agenda-skip-scheduled-if-done t)
-  (setq org-agenda-skip-deadline-if-done t)
-  (setq org-agenda-log-mode-items '(clock))
-    ;;; column view
-  (setq org-columns-default-format "%30ITEM %Effort{:} %CLOCKSUM")
-    ;;; capture
-  (setq org-capture-templates
-	`(("l" "captain's log" entry
-	   (file+datetree ,(concat org-directory "/log.org"))
-	   "* %^{title} %^G\n%T%?")
-	  ("t" "task to do" entry
-	   (file+olp ,(concat org-directory "/main.org") "unfiled tasks")
-	   "* TODO %^{task} %^G\nCREATED: %U%?" :prepend t)
-	  ("c" "clock into miscellaneous task" entry
-	   (file+olp ,(concat org-directory "/main.org") "miscellaneous")
-	   "* %?" :clock-in t :jump-to-captured t)))
-    ;;; refile
-  (setq org-refile-targets '((org-agenda-files :maxlevel . 5)))
-  (setq org-refile-use-outline-path 'file)
-  (setq org-refile-allow-creating-parent-nodes 'confirm)
-    ;;; latex
-  (setq org-latex-create-formula-image-program 'dvipng))
-(use-package powerline
-  :ensure t
-  :config
-  (powerline-center-evil-theme))
-(use-package evil-org
-  :ensure t
-  :after org
-  :config
-  (add-hook 'org-mode-hook 'evil-org-mode)
-  (add-hook 'evil-org-mode-hook (lambda () (evil-org-set-key-theme)))
-  (require 'evil-org-agenda)
-  (evil-org-agenda-set-keys))
-(use-package org-node
-  :ensure t
-  :after org
-  :config
-  ;; Start background in-memory indexing and auto-update :BACKLINKS: drawers
-  (org-node-cache-mode 1)
+(setq evil-search-module 'evil-search) ;; vim-like /search behavior instead of emacs isearch
+(use-package
+ evil
+ :ensure t
+ :config
+ (evil-mode t)
+ (define-key evil-motion-state-map (kbd "C-z") 'suspend-frame)
+ (define-key evil-motion-state-map (kbd "C-x C-z") 'evil-emacs-state)
+ (define-key evil-emacs-state-map (kbd "C-z") 'suspend-frame)
+ (define-key evil-emacs-state-map (kbd "C-x C-z") 'evil-exit-emacs-state)
+ (define-key evil-insert-state-map (kbd "C-z") (kbd "C-q C-z"))
+ (define-key evil-insert-state-map (kbd "C-x C-z") 'evil-emacs-state)
+ (define-key evil-replace-state-map (kbd "C-z") (kbd "C-q C-z")))
+(use-package
+ org
+ :ensure t
+ :config
+ ;; global
+ (setq org-directory "~/workspace/orgmode")
+ (global-set-key (kbd "C-c a") 'org-agenda)
+ (global-set-key (kbd "C-c c") 'org-capture)
+ (global-set-key (kbd "C-c l") 'org-store-link)
+ (setq org-tags-column -80)
+ (add-to-list `org-export-backends `org)
+ (setq org-image-actual-width nil)
+ ;;; logging
+ (setq org-log-into-drawer t)
+ (setq org-log-done t)
+ (setq org-log-note-clock-out t)
+ ;;; clocking
+ (org-clock-persistence-insinuate)
+ (setq org-clock-persist t)
+ (setq org-clock-history-length 10)
+ (setq org-clock-into-drawer t)
+ (setq org-clock-out-when-done t)
+ (setq org-clock-out-remove-zero-time-clocks t)
+ ;;; agenda
+ (setq org-agenda-span 'day)
+ (setq org-agenda-skip-scheduled-if-done t)
+ (setq org-agenda-skip-deadline-if-done t)
+ (setq org-agenda-log-mode-items '(clock))
+ ;;; column view
+ (setq org-columns-default-format "%30ITEM %Effort{:} %CLOCKSUM")
+ ;;; capture
+ (setq org-capture-templates
+       `(("l"
+          "captain's log"
+          entry
+          (file+datetree ,(concat org-directory "/log.org"))
+          "* %^{title} %^G\n%T%?")
+         ("t"
+          "task to do"
+          entry
+          (file+olp ,(concat org-directory "/main.org") "unfiled tasks")
+          "* TODO %^{task} %^G\nCREATED: %U%?"
+          :prepend t)
+         ("c"
+          "clock into miscellaneous task"
+          entry
+          (file+olp ,(concat org-directory "/main.org") "miscellaneous")
+          "* %?"
+          :clock-in t
+          :jump-to-captured t)))
+ ;;; refile
+ (setq org-refile-targets '((org-agenda-files :maxlevel . 5)))
+ (setq org-refile-use-outline-path 'file)
+ (setq org-refile-allow-creating-parent-nodes 'confirm)
+ ;;; latex
+ (setq org-latex-create-formula-image-program 'dvipng))
+(use-package powerline :ensure t :config (powerline-center-evil-theme))
+(use-package
+ evil-org
+ :ensure t
+ :after org
+ :config
+ (add-hook 'org-mode-hook 'evil-org-mode)
+ (add-hook 'evil-org-mode-hook (lambda () (evil-org-set-key-theme)))
+ (require 'evil-org-agenda)
+ (evil-org-agenda-set-keys))
+(use-package
+ org-node
+ :ensure t
+ :after org
+ :config
+ ;; Start background in-memory indexing and auto-update :BACKLINKS: drawers
+ (org-node-cache-mode 1)
 
-  ;; Create & save non-existent nodes silently in the background
-  (advice-add 'org-node-new-file :around
-	      (lambda (fn &rest args)
-		(save-window-excursion
-		  (apply fn args)
-		  (save-buffer))))
+ ;; Create & save non-existent nodes silently in the background
+ (advice-add
+  'org-node-new-file
+  :around
+  (lambda (fn &rest args)
+    (save-window-excursion
+      (apply fn args)
+      (save-buffer))))
 
-  ;; Standard community keybindings under C-c n ("notes")
-  (global-set-key (kbd "C-c n f") 'org-node-find)
-  (global-set-key (kbd "C-c n i") 'org-node-insert-link)
-  (global-set-key (kbd "C-c n b") 'org-node-context-dwim)
-  (global-set-key (kbd "C-c n n") 'org-node-nodeify-entry)
-  (global-set-key (kbd "C-c n r") 'org-node-refile))
+ ;; Standard community keybindings under C-c n ("notes")
+ (global-set-key (kbd "C-c n f") 'org-node-find)
+ (global-set-key (kbd "C-c n i") 'org-node-insert-link)
+ (global-set-key (kbd "C-c n b") 'org-node-context-dwim)
+ (global-set-key (kbd "C-c n n") 'org-node-nodeify-entry)
+ (global-set-key (kbd "C-c n r") 'org-node-refile))
 
 ;; allow typing spaces when inserting links to nodes
 (define-key minibuffer-local-completion-map (kbd "SPC") nil)
 (define-key minibuffer-local-must-match-map (kbd "SPC") nil)
 ;; prevent fido-vertical-mode from autoselecting first tag in capture template
-(define-key icomplete-fido-mode-map (kbd "RET")
-	    (lambda ()
-	      (interactive)
-	      (if (string-empty-p (minibuffer-contents))
-		  (exit-minibuffer)
-		(icomplete-fido-ret))))
+(define-key
+ icomplete-fido-mode-map (kbd "RET")
+ (lambda ()
+   (interactive)
+   (if (string-empty-p (minibuffer-contents))
+       (exit-minibuffer)
+     (icomplete-fido-ret))))
