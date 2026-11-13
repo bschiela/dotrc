@@ -9,98 +9,98 @@
 ;;; open links in browser from WSL
 (let ((cmd-exe "/mnt/c/Windows/System32/cmd.exe")
       (cmd-args '("/c" "start")))
-    (when (file-exists-p cmd-exe)
-      (setq browse-url-generic-program  cmd-exe
-            browse-url-generic-args     cmd-args
-            browse-url-browser-function 'browse-url-generic)))
+  (when (file-exists-p cmd-exe)
+    (setq browse-url-generic-program  cmd-exe
+	  browse-url-generic-args     cmd-args
+	  browse-url-browser-function 'browse-url-generic)))
 
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (add-to-list 'package-archives
-             '("melpa-stable" . "https://stable.melpa.org/packages/")
-)
+	     '("melpa-stable" . "https://stable.melpa.org/packages/")
+	     )
 (setq package-enable-at-startup nil)
 (setq package-install-upgrade-built-in t)
 (package-initialize)
 
 ;;; use-package
 (unless (package-installed-p 'use-package)
-        (package-refresh-contents)
-        (package-install 'use-package))
+  (package-refresh-contents)
+  (package-install 'use-package))
 (eval-when-compile (require 'use-package))
 
 ;;; packages
 (setq evil-want-C-i-jump nil)
 (setq evil-search-module 'evil-search)  ;; vim-like /search behavior instead of emacs isearch
 (use-package evil
-    :ensure t
-    :config (evil-mode t)
-    (define-key evil-motion-state-map (kbd "C-z") 'suspend-frame)
-    (define-key evil-motion-state-map (kbd "C-x C-z") 'evil-emacs-state)
-    (define-key evil-emacs-state-map (kbd "C-z") 'suspend-frame)
-    (define-key evil-emacs-state-map (kbd "C-x C-z") 'evil-exit-emacs-state)
-    (define-key evil-insert-state-map (kbd "C-z") (kbd "C-q C-z"))
-    (define-key evil-insert-state-map (kbd "C-x C-z") 'evil-emacs-state)
-    (define-key evil-replace-state-map (kbd "C-z") (kbd "C-q C-z"))
-)
+  :ensure t
+  :config (evil-mode t)
+  (define-key evil-motion-state-map (kbd "C-z") 'suspend-frame)
+  (define-key evil-motion-state-map (kbd "C-x C-z") 'evil-emacs-state)
+  (define-key evil-emacs-state-map (kbd "C-z") 'suspend-frame)
+  (define-key evil-emacs-state-map (kbd "C-x C-z") 'evil-exit-emacs-state)
+  (define-key evil-insert-state-map (kbd "C-z") (kbd "C-q C-z"))
+  (define-key evil-insert-state-map (kbd "C-x C-z") 'evil-emacs-state)
+  (define-key evil-replace-state-map (kbd "C-z") (kbd "C-q C-z"))
+  )
 (use-package org
-    :ensure t
-    :config
-    ;; global
-    (setq org-directory "~/workspace/orgmode")
-    (global-set-key (kbd "C-c a") 'org-agenda)
-    (global-set-key (kbd "C-c c") 'org-capture)
-    (global-set-key (kbd "C-c l") 'org-store-link)
-    (setq org-tags-column -80)
-    (add-to-list `org-export-backends `org)
-    (setq org-image-actual-width nil)
+  :ensure t
+  :config
+  ;; global
+  (setq org-directory "~/workspace/orgmode")
+  (global-set-key (kbd "C-c a") 'org-agenda)
+  (global-set-key (kbd "C-c c") 'org-capture)
+  (global-set-key (kbd "C-c l") 'org-store-link)
+  (setq org-tags-column -80)
+  (add-to-list `org-export-backends `org)
+  (setq org-image-actual-width nil)
     ;;; logging
-    (setq org-log-into-drawer t)
-    (setq org-log-done t)
-    (setq org-log-note-clock-out t)
+  (setq org-log-into-drawer t)
+  (setq org-log-done t)
+  (setq org-log-note-clock-out t)
     ;;; clocking
-    (org-clock-persistence-insinuate)
-    (setq org-clock-persist t)
-    (setq org-clock-history-length 10)
-    (setq org-clock-into-drawer t)
-    (setq org-clock-out-when-done t)
-    (setq org-clock-out-remove-zero-time-clocks t)
+  (org-clock-persistence-insinuate)
+  (setq org-clock-persist t)
+  (setq org-clock-history-length 10)
+  (setq org-clock-into-drawer t)
+  (setq org-clock-out-when-done t)
+  (setq org-clock-out-remove-zero-time-clocks t)
     ;;; agenda
-    (setq org-agenda-span 'day)
-    (setq org-agenda-skip-scheduled-if-done t)
-    (setq org-agenda-skip-deadline-if-done t)
-    (setq org-agenda-log-mode-items '(clock))
+  (setq org-agenda-span 'day)
+  (setq org-agenda-skip-scheduled-if-done t)
+  (setq org-agenda-skip-deadline-if-done t)
+  (setq org-agenda-log-mode-items '(clock))
     ;;; column view
-    (setq org-columns-default-format "%30ITEM %Effort{:} %CLOCKSUM")
+  (setq org-columns-default-format "%30ITEM %Effort{:} %CLOCKSUM")
     ;;; capture
-    (setq org-capture-templates
-        `(("l" "captain's log" entry
-            (file+datetree ,(concat org-directory "/log.org"))
-                "* %^{title} %^G\n%T%?")
+  (setq org-capture-templates
+	`(("l" "captain's log" entry
+	   (file+datetree ,(concat org-directory "/log.org"))
+	   "* %^{title} %^G\n%T%?")
 	  ("t" "task to do" entry
-            (file+olp ,(concat org-directory "/main.org") "unfiled tasks")
-                "* TODO %^{task} %^G\nCREATED: %U%?" :prepend t)
+	   (file+olp ,(concat org-directory "/main.org") "unfiled tasks")
+	   "* TODO %^{task} %^G\nCREATED: %U%?" :prepend t)
 	  ("c" "clock into miscellaneous task" entry
-            (file+olp ,(concat org-directory "/main.org") "miscellaneous")
-                "* %?" :clock-in t :jump-to-captured t)))
+	   (file+olp ,(concat org-directory "/main.org") "miscellaneous")
+	   "* %?" :clock-in t :jump-to-captured t)))
     ;;; refile
-    (setq org-refile-targets '((org-agenda-files :maxlevel . 5)))
-    (setq org-refile-use-outline-path 'file)
-    (setq org-refile-allow-creating-parent-nodes 'confirm)
+  (setq org-refile-targets '((org-agenda-files :maxlevel . 5)))
+  (setq org-refile-use-outline-path 'file)
+  (setq org-refile-allow-creating-parent-nodes 'confirm)
     ;;; latex
-    (setq org-latex-create-formula-image-program 'dvipng))
+  (setq org-latex-create-formula-image-program 'dvipng))
 (use-package powerline
-    :ensure t
-    :config
-    (powerline-center-evil-theme))
+  :ensure t
+  :config
+  (powerline-center-evil-theme))
 (use-package evil-org
-    :ensure t
-    :after org
-    :config
-    (add-hook 'org-mode-hook 'evil-org-mode)
-    (add-hook 'evil-org-mode-hook (lambda () (evil-org-set-key-theme)))
-    (require 'evil-org-agenda)
-    (evil-org-agenda-set-keys))
+  :ensure t
+  :after org
+  :config
+  (add-hook 'org-mode-hook 'evil-org-mode)
+  (add-hook 'evil-org-mode-hook (lambda () (evil-org-set-key-theme)))
+  (require 'evil-org-agenda)
+  (evil-org-agenda-set-keys))
 (use-package org-node
   :ensure t
   :after org
@@ -110,8 +110,8 @@
 
   ;; Create & save non-existent nodes silently in the background
   (advice-add 'org-node-new-file :around
-              (lambda (fn &rest args)
-                (save-window-excursion
+	      (lambda (fn &rest args)
+		(save-window-excursion
 		  (apply fn args)
 		  (save-buffer))))
 
@@ -127,8 +127,8 @@
 (define-key minibuffer-local-must-match-map (kbd "SPC") nil)
 ;; prevent fido-vertical-mode from autoselecting first tag in capture template
 (define-key icomplete-fido-mode-map (kbd "RET")
-  (lambda ()
-    (interactive)
-    (if (string-empty-p (minibuffer-contents))
-        (exit-minibuffer)
-      (icomplete-fido-ret))))
+	    (lambda ()
+	      (interactive)
+	      (if (string-empty-p (minibuffer-contents))
+		  (exit-minibuffer)
+		(icomplete-fido-ret))))
