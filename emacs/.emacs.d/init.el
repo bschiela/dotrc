@@ -31,6 +31,7 @@
   (require 'use-package))
 
 ;;; packages
+
 (use-package
  elisp-autofmt
  :ensure t
@@ -39,6 +40,7 @@
  :custom (elisp-autofmt-on-save-p 'always))
 (setq evil-want-C-i-jump nil)
 (setq evil-search-module 'evil-search) ;; vim-like /search behavior instead of emacs isearch
+
 (use-package
  evil
  :ensure t
@@ -51,6 +53,7 @@
  (define-key evil-insert-state-map (kbd "C-z") (kbd "C-q C-z"))
  (define-key evil-insert-state-map (kbd "C-x C-z") 'evil-emacs-state)
  (define-key evil-replace-state-map (kbd "C-z") (kbd "C-q C-z")))
+
 (use-package
  org
  :ensure t
@@ -107,7 +110,9 @@
  (setq org-refile-allow-creating-parent-nodes 'confirm)
  ;;; latex
  (setq org-latex-create-formula-image-program 'dvipng))
+
 (use-package powerline :ensure t :config (powerline-center-evil-theme))
+
 (use-package
  evil-org
  :ensure t
@@ -117,6 +122,7 @@
  (add-hook 'evil-org-mode-hook (lambda () (evil-org-set-key-theme)))
  (require 'evil-org-agenda)
  (evil-org-agenda-set-keys))
+
 (use-package
  org-node
  :ensure t
@@ -144,11 +150,36 @@
 ;; allow typing spaces when inserting links to nodes
 (define-key minibuffer-local-completion-map (kbd "SPC") nil)
 (define-key minibuffer-local-must-match-map (kbd "SPC") nil)
-;; prevent fido-vertical-mode from autoselecting first tag in capture template
-(define-key
- icomplete-fido-mode-map (kbd "RET")
- (lambda ()
-   (interactive)
-   (if (string-empty-p (minibuffer-contents))
-       (exit-minibuffer)
-     (icomplete-fido-ret))))
+
+(use-package
+ citar
+ :ensure t
+ :bind
+ (("C-c b i" . citar-insert-citation)
+  ("C-c b o" . citar-open)
+  ("C-c b n" . citar-open-notes))
+ :custom
+ ;; Specify paths
+ (org-cite-global-bibliography (directory-files "~/workspace/biblib/" t "\\.bib\\'"))
+ (citar-bibliography org-cite-global-bibliography)
+ (citar-library-paths '("~/workspace/library/"))
+
+ ;; Wire Citar into built-in org-cite
+ (org-cite-insert-processor 'citar)
+ (org-cite-follow-processor 'citar)
+ (org-cite-activate-processor 'citar)
+
+ ;; Use standard Emacs completion (fido-vertical-mode) for selecting multiple keys
+ (citar-select-multiple nil)
+
+ ;; open pdfs etc. in default system viewer
+ (citar-file-open-functions
+  '(("html" . citar-file-open-external)
+    ("pdf" . citar-file-open-external)
+    (t . find-file))))
+
+(use-package
+ citar-org-node
+ :ensure t
+ :after (citar org-node)
+ :config (citar-org-node-mode 1))
