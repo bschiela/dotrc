@@ -57,14 +57,12 @@
 (use-package
  org
  :ensure t
+ :demand t
+ :bind (("C-c a" . org-agenda) ("C-c c" . org-capture) ("C-c l" . org-store-link))
  :config
- ;; global
  (setq org-directory "~/workspace/orgmode")
- (global-set-key (kbd "C-c a") 'org-agenda)
- (global-set-key (kbd "C-c c") 'org-capture)
- (global-set-key (kbd "C-c l") 'org-store-link)
  (setq org-tags-column -80)
- (add-to-list `org-export-backends `org)
+ (add-to-list 'org-export-backends 'org)
  (setq org-image-actual-width nil)
  ;;; logging
  (setq org-log-into-drawer t)
