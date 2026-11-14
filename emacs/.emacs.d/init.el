@@ -127,25 +127,25 @@
  org-node
  :ensure t
  :after org
+ :demand t
+ :bind
+ (("C-c n i" . org-node-insert-link)
+  ("C-c n o" . org-node-find)
+  ("C-c n b" . org-node-context-dwim)
+  ("C-c n n" . org-node-nodeify-entry)
+  ("C-c n r" . org-node-refile))
  :config
  ;; Start background in-memory indexing and auto-update :BACKLINKS: drawers
  (org-node-cache-mode 1)
 
- ;; Create & save non-existent nodes silently in the background
- (advice-add
-  'org-node-new-file
-  :around
-  (lambda (fn &rest args)
-    (save-window-excursion
-      (apply fn args)
-      (save-buffer))))
+ ;; Automatically write newly created node files to disk
+ (advice-add 'org-node-new-file :after (lambda (&rest _) (save-buffer)))
 
- ;; Standard community keybindings under C-c n ("notes")
- (global-set-key (kbd "C-c n f") 'org-node-find)
- (global-set-key (kbd "C-c n i") 'org-node-insert-link)
- (global-set-key (kbd "C-c n b") 'org-node-context-dwim)
- (global-set-key (kbd "C-c n n") 'org-node-nodeify-entry)
- (global-set-key (kbd "C-c n r") 'org-node-refile))
+ ;; When inserting a link, keep focus in the current buffer even if a new node file is
+ ;; created in the background
+ (advice-add
+  'org-node-insert-link
+  :around (lambda (fn &rest args) (save-window-excursion (apply fn args)))))
 
 ;; allow typing spaces when inserting links to nodes
 (define-key minibuffer-local-completion-map (kbd "SPC") nil)
