@@ -10,19 +10,23 @@
  '(evil-undo-system 'undo-redo)
  '(fido-vertical-mode t)
  '(fill-column 88)
- '(org-agenda-files
-   '("~/workspace/orgmode/main.org" "~/workspace/orgmode/log.org"))
+ '(org-agenda-files '("~/workspace/orgmode/main.org" "~/workspace/orgmode/log.org"))
  '(org-checkbox-hierarchical-statistics nil)
  '(org-file-apps
-   '(("\\.pptx\\'" . "open %s") (auto-mode . emacs) (directory . emacs)
-     ("\\.mm\\'" . default) ("\\.x?html?\\'" . default) ("\\.pdf\\'" . default)))
+   '(("\\.pptx\\'" . "open %s")
+     (auto-mode . emacs)
+     (directory . emacs)
+     ("\\.mm\\'" . default)
+     ("\\.x?html?\\'" . default)
+     ("\\.pdf\\'" . default)))
  '(org-id-link-to-org-use-id 'create-if-interactive)
  '(org-mem-updater-mode t)
  '(org-mem-watch-dirs '("~/workspace/orgmode"))
  '(org-node-creation-fn 'org-node-new-file)
  '(org-node-file-directory-ask "~/workspace/orgmode/nodes")
  '(org-todo-keywords
-   '((sequence "TODO(t)" "NEXT(n)" "WIP(w!)" "BLOCKED(b@)" "|" "DONE(d!)" "CANCELLED(c@)")))
+   '((sequence
+      "TODO(t)" "NEXT(n)" "WIP(w!)" "BLOCKED(b@)" "|" "DONE(d!)" "CANCELLED(c@)")))
  '(package-selected-packages nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
