@@ -7,6 +7,7 @@
  '(calendar-latitude 40.7128)
  '(calendar-location-name "New York City")
  '(calendar-longitude -74.006)
+ '(citar-org-node-new-node-title-template "${=key=}")
  '(evil-undo-system 'undo-redo)
  '(fido-vertical-mode t)
  '(fill-column 88)
